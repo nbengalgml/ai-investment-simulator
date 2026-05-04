@@ -7,7 +7,8 @@ import json
 import logging
 import os
 import sys
-from datetime import datetime, timezone
+from dataclasses import dataclass
+from datetime import datetime, date, timedelta, timezone
 from pathlib import Path
 from typing import Optional
 
@@ -27,14 +28,57 @@ from data_models import (
 
 logger = logging.getLogger(__name__)
 
-# ── Strategy constants ─────────────────────────────────────────────────────────
-MAX_POSITIONS = 5
-MAX_SINGLE_PCT = 35.0      # max % of portfolio for any single position
-MIN_CASH_PCT = 10.0        # minimum cash reserve always maintained
-STOP_LOSS_PCT = -20.0      # triggers SELL
-REVIEW_ZONE_PCT = -15.0    # triggers HOLD with review flag
-REBALANCE_TRIGGER_PCT = 40.0  # position above this → partial SELL
-REBALANCE_TARGET_PCT = 30.0
+
+# ── Per-account-type strategy configuration ────────────────────────────────────
+
+@dataclass
+class StrategyConfig:
+    max_positions: int = 5
+    max_single_pct: float = 35.0
+    min_cash_pct: float = 10.0
+    stop_loss_pct: float = -20.0
+    review_zone_pct: float = -15.0
+    rebalance_trigger_pct: float = 40.0
+    rebalance_target_pct: float = 30.0
+    # Minimum confidence level required to approve a new BUY
+    # "HIGH" = all 3 signals required (brokerage: selective, avoid churn)
+    # "MEDIUM" = 2 of 3 signals (IRA: more active, tax-deferred so churn is free)
+    min_buy_confidence: str = "HIGH"
+    # Wash-sale enforcement: only relevant for brokerage (IRA is tax-deferred)
+    enforce_wash_sale: bool = False
+
+
+# Traditional IRA — tax-deferred, trade freely, maximise capital deployment
+IRA_STRATEGY = StrategyConfig(
+    max_positions=5,
+    max_single_pct=40.0,        # concentrate more — no tax drag on future rebalancing
+    min_cash_pct=5.0,           # deploy ~95% of capital; re-entry is free inside IRA
+    stop_loss_pct=-20.0,
+    review_zone_pct=-15.0,
+    rebalance_trigger_pct=35.0, # rebalance early and often — no short-term gain penalty
+    rebalance_target_pct=25.0,
+    min_buy_confidence="LOW",   # accept any positive signal (1-of-3) — aggressive entry
+    enforce_wash_sale=False,    # wash-sale doesn't apply inside tax-deferred accounts
+)
+
+# Brokerage — post-tax, selective entries, prefer LTCG, enforce wash-sale
+BROKERAGE_STRATEGY = StrategyConfig(
+    max_positions=5,
+    max_single_pct=35.0,
+    min_cash_pct=10.0,          # keep more cash; selling to re-enter triggers taxable events
+    stop_loss_pct=-20.0,
+    review_zone_pct=-15.0,
+    rebalance_trigger_pct=45.0, # wait longer before rebalancing to avoid triggering short-term gains
+    rebalance_target_pct=30.0,
+    min_buy_confidence="MEDIUM", # require 2-of-3 signals: both technical momentum AND analyst consensus
+    enforce_wash_sale=True,      # skip re-buys within 30 days of a loss-sale
+)
+
+
+def get_strategy(account_type: str) -> StrategyConfig:
+    if str(account_type) == "traditional_ira":
+        return IRA_STRATEGY
+    return BROKERAGE_STRATEGY
 
 
 # ── Helpers ────────────────────────────────────────────────────────────────────
@@ -72,8 +116,8 @@ def _algo_rationale(
         ]
     if action == "SELL" and trigger == "rebalance":
         return [
-            f"{ticker} allocation exceeded {REBALANCE_TRIGGER_PCT:.0f}% — concentration risk above limit.",
-            f"Partial sale targets {REBALANCE_TARGET_PCT:.0f}% allocation per position-sizing rules.",
+            f"{ticker} allocation exceeded concentration limit — rebalance triggered.",
+            "Partial sale reduces concentration risk per position-sizing rules.",
             "Freed capital improves cash reserve for new opportunities.",
         ]
     if action == "BUY" and signal:
@@ -145,30 +189,66 @@ def _claude_rationale(
 
 # ── Public analysis functions ──────────────────────────────────────────────────
 
-def check_exit_signals(holdings: list[Holding]) -> list[dict]:
+def _wash_sale_tickers(sim_dir: Optional[Path]) -> set[str]:
+    """
+    Return tickers sold at a loss within the last 30 days (wash-sale window).
+    Only called for brokerage accounts. Returns empty set if trade log not found.
+    """
+    if sim_dir is None:
+        return set()
+    log_path = sim_dir / "trades" / "log.json"
+    if not log_path.exists():
+        return set()
+    try:
+        entries = _storage.read_json(log_path)
+        cutoff = date.today() - timedelta(days=30)
+        blocked = set()
+        for e in entries:
+            if e.get("action") != "SELL":
+                continue
+            ts = e.get("timestamp", "")[:10]
+            try:
+                trade_date = date.fromisoformat(ts)
+            except ValueError:
+                continue
+            if trade_date >= cutoff and e.get("simulated_tax_impact", {}).get("gain_loss", 0) < 0:
+                blocked.add(e["ticker"])
+        return blocked
+    except Exception:
+        return set()
+
+
+def check_exit_signals(holdings: list[Holding], cfg: Optional[StrategyConfig] = None) -> list[dict]:
     """
     Evaluate current holdings against exit rules.
     Returns list of raw exit dicts with keys: ticker, action, trigger, [loss_pct|allocation_pct].
     """
+    if cfg is None:
+        cfg = BROKERAGE_STRATEGY
     exits = []
     for h in holdings:
         if h.avg_cost_basis == 0:
             continue
         loss_pct = (h.current_price - h.avg_cost_basis) / h.avg_cost_basis * 100
-        if loss_pct <= STOP_LOSS_PCT:
+        if loss_pct <= cfg.stop_loss_pct:
             exits.append({"ticker": h.ticker, "action": "SELL", "trigger": "stop_loss", "loss_pct": round(loss_pct, 2)})
-        elif h.allocation_pct > REBALANCE_TRIGGER_PCT:
+        elif h.allocation_pct > cfg.rebalance_trigger_pct:
             exits.append({"ticker": h.ticker, "action": "SELL", "trigger": "rebalance", "allocation_pct": h.allocation_pct})
-        elif loss_pct <= REVIEW_ZONE_PCT:
+        elif loss_pct <= cfg.review_zone_pct:
             exits.append({"ticker": h.ticker, "action": "HOLD", "trigger": "review_zone", "loss_pct": round(loss_pct, 2)})
     return exits
 
 
-def rank_candidates(signals: list[StockSignal], held_tickers: set[str]) -> list[StockSignal]:
+def rank_candidates(
+    signals: list[StockSignal],
+    held_tickers: set[str],
+    blocked_tickers: Optional[set[str]] = None,
+) -> list[StockSignal]:
     """Return new candidates sorted by composite_score descending."""
+    skip = held_tickers | (blocked_tickers or set())
     eligible = [
         s for s in signals
-        if s.ticker not in held_tickers and (s.composite_score or 0) > 0
+        if s.ticker not in skip and (s.composite_score or 0) > 0
     ]
     return sorted(eligible, key=lambda s: s.composite_score or 0, reverse=True)
 
@@ -177,24 +257,26 @@ def compute_allocations(
     candidates: list[StockSignal],
     portfolio: PortfolioState,
     freed_slots: int = 0,
+    cfg: Optional[StrategyConfig] = None,
 ) -> list[tuple[StockSignal, float]]:
     """
     Allocate capital to top N new positions.
     freed_slots: slots opened by pending SELL recommendations.
     """
+    if cfg is None:
+        cfg = BROKERAGE_STRATEGY
     used_slots = len(portfolio.holdings) - freed_slots
-    open_slots = MAX_POSITIONS - used_slots
+    open_slots = cfg.max_positions - used_slots
     if open_slots <= 0 or not candidates:
         return []
 
     top = candidates[:open_slots]
     invested_pct = sum(h.allocation_pct for h in portfolio.holdings)
-    # Reduce invested_pct by freed_slots worth of allocation (approximate as average)
     if freed_slots > 0 and portfolio.holdings:
         avg_alloc = invested_pct / len(portfolio.holdings)
         invested_pct -= freed_slots * avg_alloc
 
-    available = 100.0 - invested_pct - MIN_CASH_PCT
+    available = 100.0 - invested_pct - cfg.min_cash_pct
     if available <= 0:
         return []
 
@@ -202,10 +284,13 @@ def compute_allocations(
     result = []
     for s in top:
         raw = (s.composite_score or 50.0) / total_score * available
-        pct = round(min(raw, MAX_SINGLE_PCT), 1)
+        pct = round(min(raw, cfg.max_single_pct), 1)
         if pct > 0:
             result.append((s, pct))
     return result
+
+
+_CONFIDENCE_RANK = {"HIGH": 3, "MEDIUM": 2, "LOW": 1}
 
 
 def run_analysis(
@@ -213,15 +298,16 @@ def run_analysis(
     portfolio: PortfolioState,
     use_claude: bool = True,
     out_dir: Optional[Path] = None,
+    sim_dir: Optional[Path] = None,
 ) -> AnalystReport:
+    cfg = get_strategy(portfolio.account_type.value)
     avg_momentum = _sector_avg_momentum(snapshot.stocks)
     signal_map = {s.ticker: s for s in snapshot.stocks}
     held_tickers = {h.ticker for h in portfolio.holdings}
 
     # ── 1. Exit checks on current holdings ───────────────────────────────────
-    exit_signals = check_exit_signals(portfolio.holdings)
+    exit_signals = check_exit_signals(portfolio.holdings, cfg)
     exit_map = {e["ticker"]: e for e in exit_signals}
-    # Count full-sell exits to open slots
     freed = sum(1 for e in exit_signals if e["action"] == "SELL")
 
     # ── 2. HOLD for stable existing positions ────────────────────────────────
@@ -231,8 +317,27 @@ def run_analysis(
     ]
 
     # ── 3. Rank new BUY candidates ────────────────────────────────────────────
-    ranked = rank_candidates(snapshot.stocks, held_tickers)
-    allocations = compute_allocations(ranked, portfolio, freed_slots=freed)
+    # Brokerage: enforce wash-sale rule (no re-buy within 30 days of a loss-sale)
+    blocked: set[str] = set()
+    if cfg.enforce_wash_sale:
+        blocked = _wash_sale_tickers(sim_dir)
+        if blocked:
+            logger.info("Wash-sale block (brokerage): %s", ", ".join(sorted(blocked)))
+
+    all_candidates = rank_candidates(snapshot.stocks, held_tickers, blocked_tickers=blocked)
+
+    # Filter by account-type confidence threshold before allocating
+    min_rank = _CONFIDENCE_RANK.get(cfg.min_buy_confidence, 3)
+    qualified = [
+        s for s in all_candidates
+        if _CONFIDENCE_RANK.get(_confidence(s, avg_momentum), 1) >= min_rank
+    ]
+    logger.info(
+        "BUY candidates: %d total → %d pass %s confidence threshold (%s)",
+        len(all_candidates), len(qualified), cfg.min_buy_confidence, portfolio.account_type.value,
+    )
+
+    allocations = compute_allocations(qualified, portfolio, freed_slots=freed, cfg=cfg)
 
     # ── 4. Build payload for Claude rationale ────────────────────────────────
     claude_payload: list[dict] = []
@@ -290,7 +395,7 @@ def run_analysis(
             ticker=ticker,
             action=e["action"],
             confidence="HIGH",
-            allocation_pct=REBALANCE_TARGET_PCT if e["trigger"] == "rebalance" else 0.0,
+            allocation_pct=cfg.rebalance_target_pct if e["trigger"] == "rebalance" else 0.0,
             composite_score=sig.composite_score or 0.0 if sig else 0.0,
             rationale=get_rationale(ticker, e["action"], e["trigger"]),
             data_sources=snapshot.data_sources,

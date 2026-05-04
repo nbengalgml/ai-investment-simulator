@@ -81,6 +81,7 @@ def main() -> None:
         portfolio,
         use_claude=not args.no_claude,
         out_dir=sim_d / "research" / "recommendations",
+        sim_dir=sim_d,
     )
 
     buys = [r for r in report.recommendations if r.action == "BUY"]
