@@ -1,0 +1,79 @@
+{
+  "account_type": "traditional_ira",
+  "target_market": "finance",
+  "budget_total": 10000.0,
+  "cash_available": 500.0,
+  "last_updated": "2026-05-04T15:54:47.366238Z",
+  "holdings": [
+    {
+      "ticker": "MS",
+      "shares": 10.2638,
+      "avg_cost_basis": 188.04,
+      "current_price": 188.04,
+      "market_value": 1930.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "allocation_pct": 19.3,
+      "open_date": "2026-05-04",
+      "analyst_rating": "BUY",
+      "confidence": "MEDIUM"
+    },
+    {
+      "ticker": "BLK",
+      "shares": 1.8254,
+      "avg_cost_basis": 1057.315,
+      "current_price": 1057.315,
+      "market_value": 1930.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "allocation_pct": 19.3,
+      "open_date": "2026-05-04",
+      "analyst_rating": "BUY",
+      "confidence": "MEDIUM"
+    },
+    {
+      "ticker": "COF",
+      "shares": 10.0487,
+      "avg_cost_basis": 191.07,
+      "current_price": 191.07,
+      "market_value": 1920.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "allocation_pct": 19.2,
+      "open_date": "2026-05-04",
+      "analyst_rating": "BUY",
+      "confidence": "MEDIUM"
+    },
+    {
+      "ticker": "BAC",
+      "shares": 36.4334,
+      "avg_cost_basis": 52.15,
+      "current_price": 52.15,
+      "market_value": 1900.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "allocation_pct": 19.0,
+      "open_date": "2026-05-04",
+      "analyst_rating": "BUY",
+      "confidence": "LOW"
+    },
+    {
+      "ticker": "C",
+      "shares": 14.5693,
+      "avg_cost_basis": 124.92,
+      "current_price": 124.92,
+      "market_value": 1820.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "allocation_pct": 18.2,
+      "open_date": "2026-05-04",
+      "analyst_rating": "BUY",
+      "confidence": "MEDIUM"
+    }
+  ],
+  "total_market_value": 9500.0,
+  "total_unrealized_pnl": 0.0,
+  "total_unrealized_pnl_pct": 0.0,
+  "strategy": "growth",
+  "max_positions": 5
+}

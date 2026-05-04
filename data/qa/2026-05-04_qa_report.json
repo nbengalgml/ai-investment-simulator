@@ -1,0 +1,13 @@
+{
+  "report_date": "2026-05-04",
+  "generated_at": "2026-05-04T04:04:26.925176+00:00",
+  "suite": "full",
+  "exit_code": 4,
+  "passed": 0,
+  "failed": 0,
+  "errors": 0,
+  "total": 0,
+  "output_tail": "\nno tests ran in 0.00s\nERROR: file or directory not found: /app/tests\n\n",
+  "success": false,
+  "disclaimer": "SIMULATION ONLY \u2014 not financial advice."
+}

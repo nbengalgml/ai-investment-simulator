@@ -1,0 +1,95 @@
+{
+  "report_id": "rpt-20260504-0404",
+  "generated_at": "2026-05-04T04:04:26.020174Z",
+  "based_on_snapshot_id": "snap-20260504-0403",
+  "recommendations": [
+    {
+      "ticker": "SOUN",
+      "action": "HOLD",
+      "confidence": "MEDIUM",
+      "allocation_pct": 18.7,
+      "composite_score": 83.5,
+      "rationale": [
+        "SOUN maintains position within acceptable range.",
+        "No exit signals triggered; monitoring for momentum changes.",
+        "Current allocation remains within target bounds."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T04:04:26.020174Z"
+    },
+    {
+      "ticker": "GOOGL",
+      "action": "HOLD",
+      "confidence": "MEDIUM",
+      "allocation_pct": 17.9,
+      "composite_score": 80.0,
+      "rationale": [
+        "GOOGL maintains position within acceptable range.",
+        "No exit signals triggered; monitoring for momentum changes.",
+        "Current allocation remains within target bounds."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T04:04:26.020174Z"
+    },
+    {
+      "ticker": "AMZN",
+      "action": "HOLD",
+      "confidence": "MEDIUM",
+      "allocation_pct": 17.9,
+      "composite_score": 80.0,
+      "rationale": [
+        "AMZN maintains position within acceptable range.",
+        "No exit signals triggered; monitoring for momentum changes.",
+        "Current allocation remains within target bounds."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T04:04:26.020174Z"
+    },
+    {
+      "ticker": "NVDA",
+      "action": "HOLD",
+      "confidence": "MEDIUM",
+      "allocation_pct": 17.8,
+      "composite_score": 79.5,
+      "rationale": [
+        "NVDA maintains position within acceptable range.",
+        "No exit signals triggered; monitoring for momentum changes.",
+        "Current allocation remains within target bounds."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T04:04:26.020174Z"
+    },
+    {
+      "ticker": "MSFT",
+      "action": "HOLD",
+      "confidence": "MEDIUM",
+      "allocation_pct": 17.8,
+      "composite_score": 79.5,
+      "rationale": [
+        "MSFT maintains position within acceptable range.",
+        "No exit signals triggered; monitoring for momentum changes.",
+        "Current allocation remains within target bounds."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T04:04:26.020174Z"
+    }
+  ],
+  "total_invested_pct": 90.1,
+  "cash_reserve_pct": 9.9,
+  "strategy_notes": "Growth | brokerage | sector: AI | BUY=0 SELL=0 HOLD=5"
+}

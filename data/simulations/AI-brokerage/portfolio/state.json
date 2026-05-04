@@ -1,0 +1,79 @@
+{
+  "account_type": "brokerage",
+  "target_market": "AI",
+  "budget_total": 10000.0,
+  "cash_available": 1000.0,
+  "last_updated": "2026-05-04T15:54:47.205146Z",
+  "holdings": [
+    {
+      "ticker": "SOUN",
+      "shares": 195.5193,
+      "avg_cost_basis": 9.82,
+      "current_price": 9.82,
+      "market_value": 1920.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "allocation_pct": 19.2,
+      "open_date": "2026-05-04",
+      "analyst_rating": "BUY",
+      "confidence": "MEDIUM"
+    },
+    {
+      "ticker": "GOOGL",
+      "shares": 4.8218,
+      "avg_cost_basis": 381.6,
+      "current_price": 381.6,
+      "market_value": 1840.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "allocation_pct": 18.4,
+      "open_date": "2026-05-04",
+      "analyst_rating": "BUY",
+      "confidence": "MEDIUM"
+    },
+    {
+      "ticker": "AMZN",
+      "shares": 6.7274,
+      "avg_cost_basis": 273.51,
+      "current_price": 273.51,
+      "market_value": 1840.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "allocation_pct": 18.4,
+      "open_date": "2026-05-04",
+      "analyst_rating": "BUY",
+      "confidence": "MEDIUM"
+    },
+    {
+      "ticker": "ORCL",
+      "shares": 9.9305,
+      "avg_cost_basis": 181.26,
+      "current_price": 181.26,
+      "market_value": 1800.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "allocation_pct": 18.0,
+      "open_date": "2026-05-04",
+      "analyst_rating": "BUY",
+      "confidence": "MEDIUM"
+    },
+    {
+      "ticker": "AMD",
+      "shares": 4.6773,
+      "avg_cost_basis": 342.08,
+      "current_price": 342.08,
+      "market_value": 1600.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "allocation_pct": 16.0,
+      "open_date": "2026-05-04",
+      "analyst_rating": "BUY",
+      "confidence": "MEDIUM"
+    }
+  ],
+  "total_market_value": 9000.0,
+  "total_unrealized_pnl": 0.0,
+  "total_unrealized_pnl_pct": 0.0,
+  "strategy": "growth",
+  "max_positions": 5
+}

@@ -1,0 +1,128 @@
+[
+  {
+    "trade_id": "ffe85b7b-aba1-45ce-908b-17ef55705236",
+    "timestamp": "2026-05-04T15:18:21.687455Z",
+    "action": "BUY",
+    "ticker": "ARRY",
+    "shares": 252.9183,
+    "price": 7.71,
+    "total_value": 1950.0,
+    "rationale": "20-day momentum of +12.9% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "fcb8b666-ce55-4303-8dc9-2841369b1cac",
+    "timestamp": "2026-05-04T15:18:21.687455Z",
+    "action": "BUY",
+    "ticker": "BE",
+    "shares": 6.4716,
+    "price": 282.775,
+    "total_value": 1830.0,
+    "rationale": "20-day momentum of +108.1% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "fb7a366f-7fab-4f4c-9f7c-ca45984f63f6",
+    "timestamp": "2026-05-04T15:18:21.687455Z",
+    "action": "BUY",
+    "ticker": "FSLR",
+    "shares": 8.4352,
+    "price": 208.65,
+    "total_value": 1760.0,
+    "rationale": "20-day momentum of +8.5% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "a154f9a9-e986-47e2-a98d-c7a15170dce9",
+    "timestamp": "2026-05-04T15:18:21.687455Z",
+    "action": "BUY",
+    "ticker": "PLUG",
+    "shares": 553.6,
+    "price": 3.125,
+    "total_value": 1730.0,
+    "rationale": "20-day momentum of +24.0% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "7d85a5d0-6ba3-4978-824c-1ab1995bdf10",
+    "timestamp": "2026-05-04T15:18:21.687455Z",
+    "action": "BUY",
+    "ticker": "CSIQ",
+    "shares": 109.3546,
+    "price": 15.8201,
+    "total_value": 1730.0,
+    "rationale": "20-day momentum of +30.6% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "fcddea0f-9744-4614-824f-137d9b624ca2",
+    "timestamp": "2026-05-04T15:54:47.299746Z",
+    "action": "BUY",
+    "ticker": "BE",
+    "shares": 12.3786,
+    "price": 282.745,
+    "total_value": 3500.0,
+    "rationale": "20-day momentum of +108.0% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  }
+]

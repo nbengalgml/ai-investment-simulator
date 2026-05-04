@@ -1,0 +1,83 @@
+{
+  "report_date": "2026-05-04",
+  "generated_at": "2026-05-04T15:54:47.275970Z",
+  "executive_summary": "Simulation cycle completed for 2026-05-04. Portfolio day P&L: $+0.00 (+0.00%). Initiated 5 new position(s): RBBN, ANET, EXTR, VIAV, CIEN. SIMULATION ONLY \u2014 not financial advice.",
+  "market_conditions": "Sector 'networking' avg 20-day momentum: +17.5%. 10 stocks tracked. Data sources: yfinance, SEC EDGAR.",
+  "portfolio_performance": {
+    "day_pnl": 0.0,
+    "day_pnl_pct": 0.0,
+    "total_unrealized_pnl": 0.0
+  },
+  "actions_taken": [
+    {
+      "action": "BUY",
+      "ticker": "RBBN",
+      "shares": 715.3558,
+      "price": 2.67,
+      "total_value": 1910.0
+    },
+    {
+      "action": "BUY",
+      "ticker": "ANET",
+      "shares": 10.5555,
+      "price": 173.37,
+      "total_value": 1830.0
+    },
+    {
+      "action": "BUY",
+      "ticker": "EXTR",
+      "shares": 80.5635,
+      "price": 22.715,
+      "total_value": 1830.0
+    },
+    {
+      "action": "BUY",
+      "ticker": "VIAV",
+      "shares": 34.075,
+      "price": 53.705,
+      "total_value": 1830.0
+    },
+    {
+      "action": "BUY",
+      "ticker": "CIEN",
+      "shares": 2.9581,
+      "price": 537.5,
+      "total_value": 1590.0
+    }
+  ],
+  "top_signals": [
+    {
+      "ticker": "RBBN",
+      "composite_score": 83.5,
+      "momentum_20d_pct": 18.6667
+    },
+    {
+      "ticker": "ANET",
+      "composite_score": 80.0,
+      "momentum_20d_pct": 29.7291
+    },
+    {
+      "ticker": "EXTR",
+      "composite_score": 80.0,
+      "momentum_20d_pct": 43.5841
+    },
+    {
+      "ticker": "VIAV",
+      "composite_score": 80.0,
+      "momentum_20d_pct": 39.3487
+    },
+    {
+      "ticker": "CSCO",
+      "composite_score": 70.8,
+      "momentum_20d_pct": 14.7496
+    }
+  ],
+  "recommendations_pending": [],
+  "next_day_watchlist": [
+    "CSCO",
+    "LITE",
+    "JNPR",
+    "INFN",
+    "CALX"
+  ]
+}

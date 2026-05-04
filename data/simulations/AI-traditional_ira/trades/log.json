@@ -1,0 +1,317 @@
+[
+  {
+    "trade_id": "3ef868bc-c71e-4dbd-9d6d-b2718fc25cab",
+    "timestamp": "2026-05-04T15:18:21.575969Z",
+    "action": "BUY",
+    "ticker": "SOUN",
+    "shares": 187.4499,
+    "price": 9.976,
+    "total_value": 1870.0,
+    "rationale": "20-day momentum of +48.9% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "traditional_ira",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "a0153e75-2429-46e6-bf68-19093a2883b6",
+    "timestamp": "2026-05-04T15:18:21.575969Z",
+    "action": "BUY",
+    "ticker": "GOOGL",
+    "shares": 4.6866,
+    "price": 381.94,
+    "total_value": 1790.0,
+    "rationale": "20-day momentum of +25.0% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "traditional_ira",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "af1f25f7-4131-44d1-be75-4c900638d58a",
+    "timestamp": "2026-05-04T15:18:21.575969Z",
+    "action": "BUY",
+    "ticker": "AMZN",
+    "shares": 6.5255,
+    "price": 274.31,
+    "total_value": 1790.0,
+    "rationale": "20-day momentum of +28.3% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "traditional_ira",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "8e5ae374-4808-453f-a97a-b67909fcb86e",
+    "timestamp": "2026-05-04T15:18:21.575969Z",
+    "action": "BUY",
+    "ticker": "NVDA",
+    "shares": 9.0076,
+    "price": 197.61,
+    "total_value": 1780.0,
+    "rationale": "20-day momentum of +11.0% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "traditional_ira",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "3f8d8997-404b-425e-a5f7-dcd88013d64b",
+    "timestamp": "2026-05-04T15:18:21.575969Z",
+    "action": "BUY",
+    "ticker": "MSFT",
+    "shares": 4.2611,
+    "price": 417.73,
+    "total_value": 1780.0,
+    "rationale": "20-day momentum of +12.2% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "traditional_ira",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "d67cf457-294e-4c9b-a204-a9d7ade54f9f",
+    "timestamp": "2026-05-04T15:51:30.700426Z",
+    "action": "BUY",
+    "ticker": "SOUN",
+    "shares": 206.721,
+    "price": 9.82,
+    "total_value": 2030.0,
+    "rationale": "20-day momentum of +46.6% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "traditional_ira",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "10baef1f-f673-4188-93cb-4ddef378226d",
+    "timestamp": "2026-05-04T15:51:30.700426Z",
+    "action": "BUY",
+    "ticker": "GOOGL",
+    "shares": 5.0839,
+    "price": 381.6,
+    "total_value": 1940.0,
+    "rationale": "20-day momentum of +24.9% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "traditional_ira",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "c1555b75-b7d0-444c-978b-e8569c121983",
+    "timestamp": "2026-05-04T15:51:30.700426Z",
+    "action": "BUY",
+    "ticker": "AMZN",
+    "shares": 7.093,
+    "price": 273.51,
+    "total_value": 1940.0,
+    "rationale": "20-day momentum of +27.9% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "traditional_ira",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "e9252c6c-6d54-4435-8680-25ae110fbce0",
+    "timestamp": "2026-05-04T15:51:30.700426Z",
+    "action": "BUY",
+    "ticker": "ORCL",
+    "shares": 10.4822,
+    "price": 181.26,
+    "total_value": 1900.0,
+    "rationale": "20-day momentum of +27.0% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "traditional_ira",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "fcb89167-dbcd-4049-ad50-5a6e9c43d14b",
+    "timestamp": "2026-05-04T15:51:30.700426Z",
+    "action": "BUY",
+    "ticker": "AMD",
+    "shares": 4.9404,
+    "price": 342.08,
+    "total_value": 1690.0,
+    "rationale": "20-day momentum of +54.4% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "traditional_ira",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "a4c523f8-674a-4e0d-a5b6-1b5431124c84",
+    "timestamp": "2026-05-04T15:54:47.216297Z",
+    "action": "BUY",
+    "ticker": "SOUN",
+    "shares": 201.6293,
+    "price": 9.82,
+    "total_value": 1980.0,
+    "rationale": "20-day momentum of +46.6% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "traditional_ira",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "31a82517-4a83-4b2a-b084-24010b20882c",
+    "timestamp": "2026-05-04T15:54:47.216297Z",
+    "action": "BUY",
+    "ticker": "GOOGL",
+    "shares": 4.9528,
+    "price": 381.6,
+    "total_value": 1890.0,
+    "rationale": "20-day momentum of +24.9% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "traditional_ira",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "d8bba65c-4c9e-43b3-b93b-f4152fd07c4b",
+    "timestamp": "2026-05-04T15:54:47.216297Z",
+    "action": "BUY",
+    "ticker": "AMZN",
+    "shares": 6.9102,
+    "price": 273.51,
+    "total_value": 1890.0,
+    "rationale": "20-day momentum of +27.9% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "traditional_ira",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "52832af8-38a8-4199-9cab-2a0ebf12c061",
+    "timestamp": "2026-05-04T15:54:47.216297Z",
+    "action": "BUY",
+    "ticker": "MSFT",
+    "shares": 4.5141,
+    "price": 416.4699,
+    "total_value": 1880.0,
+    "rationale": "20-day momentum of +11.9% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "traditional_ira",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "e4e84fd3-a924-44ce-a089-63f1961c7b22",
+    "timestamp": "2026-05-04T15:54:47.216297Z",
+    "action": "BUY",
+    "ticker": "ORCL",
+    "shares": 10.2063,
+    "price": 181.26,
+    "total_value": 1850.0,
+    "rationale": "20-day momentum of +27.0% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "traditional_ira",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  }
+]

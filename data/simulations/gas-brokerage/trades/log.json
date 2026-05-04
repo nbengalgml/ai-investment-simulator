@@ -1,0 +1,212 @@
+[
+  {
+    "trade_id": "af42e9e4-2a94-4dd9-90c4-ba95f5b881c2",
+    "timestamp": "2026-05-04T15:18:21.746781Z",
+    "action": "BUY",
+    "ticker": "SLB",
+    "shares": 34.1472,
+    "price": 56.52,
+    "total_value": 1930.0,
+    "rationale": "20-day momentum of +12.3% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "9a925166-0b0e-4773-a631-43daf99143e2",
+    "timestamp": "2026-05-04T15:18:21.746781Z",
+    "action": "BUY",
+    "ticker": "BKR",
+    "shares": 27.9751,
+    "price": 68.99,
+    "total_value": 1930.0,
+    "rationale": "20-day momentum of +12.6% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "d2b8977b-4334-46be-917a-c351b3b6b1e8",
+    "timestamp": "2026-05-04T15:18:21.746781Z",
+    "action": "BUY",
+    "ticker": "HAL",
+    "shares": 43.6189,
+    "price": 41.725,
+    "total_value": 1820.0,
+    "rationale": "20-day momentum of +7.8% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "666a7011-a1d5-4f30-b895-7f82849be38d",
+    "timestamp": "2026-05-04T15:18:21.746781Z",
+    "action": "BUY",
+    "ticker": "DVN",
+    "shares": 32.6547,
+    "price": 50.835,
+    "total_value": 1660.0,
+    "rationale": "Analyst consensus: buy \u2014 consensus target $59.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "ecf17183-24ab-4700-bd51-86f2d5c51445",
+    "timestamp": "2026-05-04T15:18:21.746781Z",
+    "action": "BUY",
+    "ticker": "MPC",
+    "shares": 6.6381,
+    "price": 250.07,
+    "total_value": 1660.0,
+    "rationale": "Analyst consensus: buy \u2014 consensus target $249.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "ca1579ea-9340-4181-9e5b-c70d30c18fef",
+    "timestamp": "2026-05-04T15:54:47.328612Z",
+    "action": "BUY",
+    "ticker": "SLB",
+    "shares": 34.2685,
+    "price": 56.32,
+    "total_value": 1930.0,
+    "rationale": "20-day momentum of +11.9% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "a9773cc8-f334-4c2e-80e0-b3f70bb7155e",
+    "timestamp": "2026-05-04T15:54:47.328612Z",
+    "action": "BUY",
+    "ticker": "BKR",
+    "shares": 28.0646,
+    "price": 68.77,
+    "total_value": 1930.0,
+    "rationale": "20-day momentum of +12.3% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "712294e7-927f-4ef7-99a2-a5146905ddbf",
+    "timestamp": "2026-05-04T15:54:47.328612Z",
+    "action": "BUY",
+    "ticker": "HAL",
+    "shares": 43.6399,
+    "price": 41.705,
+    "total_value": 1820.0,
+    "rationale": "20-day momentum of +7.7% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "a5679e6a-ece6-4743-a57f-f80f79eaa889",
+    "timestamp": "2026-05-04T15:54:47.328612Z",
+    "action": "BUY",
+    "ticker": "DVN",
+    "shares": 32.4821,
+    "price": 51.105,
+    "total_value": 1660.0,
+    "rationale": "Analyst consensus: buy \u2014 consensus target $59.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "0c75b197-90e5-46e0-b89f-ec9766fac3eb",
+    "timestamp": "2026-05-04T15:54:47.328612Z",
+    "action": "BUY",
+    "ticker": "MPC",
+    "shares": 6.6133,
+    "price": 251.01,
+    "total_value": 1660.0,
+    "rationale": "Analyst consensus: buy \u2014 consensus target $249.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  }
+]

@@ -1,0 +1,212 @@
+[
+  {
+    "trade_id": "e7b22fd4-f2df-488b-a1ba-59240e0274a1",
+    "timestamp": "2026-05-04T15:18:21.632700Z",
+    "action": "BUY",
+    "ticker": "RBBN",
+    "shares": 708.7199,
+    "price": 2.695,
+    "total_value": 1910.0,
+    "rationale": "20-day momentum of +19.8% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "d147ea22-68a0-4139-8a47-0518d6211e9a",
+    "timestamp": "2026-05-04T15:18:21.632700Z",
+    "action": "BUY",
+    "ticker": "ANET",
+    "shares": 10.4619,
+    "price": 174.92,
+    "total_value": 1830.0,
+    "rationale": "20-day momentum of +30.9% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "5af1eae6-3409-4d3d-b55b-4f0814b1aaa9",
+    "timestamp": "2026-05-04T15:18:21.632700Z",
+    "action": "BUY",
+    "ticker": "EXTR",
+    "shares": 79.9127,
+    "price": 22.9,
+    "total_value": 1830.0,
+    "rationale": "20-day momentum of +44.8% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "c0263935-ca48-4d7d-93db-24d9b0bbce7a",
+    "timestamp": "2026-05-04T15:18:21.632700Z",
+    "action": "BUY",
+    "ticker": "VIAV",
+    "shares": 33.6583,
+    "price": 54.37,
+    "total_value": 1830.0,
+    "rationale": "20-day momentum of +41.1% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "265ae8f6-d4f3-46e6-bec0-1e1a9d0f8cd4",
+    "timestamp": "2026-05-04T15:18:21.632700Z",
+    "action": "BUY",
+    "ticker": "CSCO",
+    "shares": 17.4738,
+    "price": 92.71,
+    "total_value": 1620.0,
+    "rationale": "20-day momentum of +14.9% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "c8b642d2-4716-4ead-9890-12f6ad9b5a6d",
+    "timestamp": "2026-05-04T15:54:47.274487Z",
+    "action": "BUY",
+    "ticker": "RBBN",
+    "shares": 715.3558,
+    "price": 2.67,
+    "total_value": 1910.0,
+    "rationale": "20-day momentum of +18.7% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "7963db09-5347-44d7-a11e-5ec8387dd82e",
+    "timestamp": "2026-05-04T15:54:47.274487Z",
+    "action": "BUY",
+    "ticker": "ANET",
+    "shares": 10.5555,
+    "price": 173.37,
+    "total_value": 1830.0,
+    "rationale": "20-day momentum of +29.7% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "6239ef80-11c3-4d22-8592-04f68f7ad439",
+    "timestamp": "2026-05-04T15:54:47.274487Z",
+    "action": "BUY",
+    "ticker": "EXTR",
+    "shares": 80.5635,
+    "price": 22.715,
+    "total_value": 1830.0,
+    "rationale": "20-day momentum of +43.6% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "2e557c5c-83d3-4d5f-91dc-af30d38d8e1b",
+    "timestamp": "2026-05-04T15:54:47.274487Z",
+    "action": "BUY",
+    "ticker": "VIAV",
+    "shares": 34.075,
+    "price": 53.705,
+    "total_value": 1830.0,
+    "rationale": "20-day momentum of +39.3% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "017ad24a-e2bd-4d64-94ce-afbab7898b9b",
+    "timestamp": "2026-05-04T15:54:47.274487Z",
+    "action": "BUY",
+    "ticker": "CIEN",
+    "shares": 2.9581,
+    "price": 537.5,
+    "total_value": 1590.0,
+    "rationale": "20-day momentum of +20.0% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  }
+]

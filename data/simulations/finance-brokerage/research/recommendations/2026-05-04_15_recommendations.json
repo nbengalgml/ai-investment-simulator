@@ -1,0 +1,78 @@
+{
+  "report_id": "rpt-20260504-1554",
+  "generated_at": "2026-05-04T15:54:12.831680Z",
+  "based_on_snapshot_id": "snap-20260504-1526",
+  "recommendations": [
+    {
+      "ticker": "MS",
+      "action": "BUY",
+      "confidence": "MEDIUM",
+      "allocation_pct": 22.9,
+      "composite_score": 70.8,
+      "rationale": [
+        "20-day momentum of +12.2% outperforms sector average.",
+        "Analyst consensus: buy \u2014 consensus target $200.",
+        "Recent SEC filing: 8-K filed 2026-04-16 \u2014 MS."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T15:54:12.831680Z"
+    },
+    {
+      "ticker": "BLK",
+      "action": "BUY",
+      "confidence": "MEDIUM",
+      "allocation_pct": 22.9,
+      "composite_score": 70.8,
+      "rationale": [
+        "20-day momentum of +10.3% outperforms sector average.",
+        "Analyst consensus: buy \u2014 consensus target $1254.",
+        "Composite score 71/100 supports position entry."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T15:54:12.831680Z"
+    },
+    {
+      "ticker": "COF",
+      "action": "BUY",
+      "confidence": "MEDIUM",
+      "allocation_pct": 22.7,
+      "composite_score": 70.2,
+      "rationale": [
+        "20-day momentum of +5.5% outperforms sector average.",
+        "Analyst consensus: buy \u2014 consensus target $256.",
+        "Composite score 70/100 supports position entry."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T15:54:12.831680Z"
+    },
+    {
+      "ticker": "C",
+      "action": "BUY",
+      "confidence": "MEDIUM",
+      "allocation_pct": 21.6,
+      "composite_score": 66.8,
+      "rationale": [
+        "20-day momentum of +6.7% outperforms sector average.",
+        "Analyst consensus: buy \u2014 consensus target $143.",
+        "Composite score 67/100 supports position entry."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T15:54:12.831680Z"
+    }
+  ],
+  "total_invested_pct": 90.1,
+  "cash_reserve_pct": 9.9,
+  "strategy_notes": "Growth | brokerage | sector: finance | BUY=4 SELL=0 HOLD=0"
+}

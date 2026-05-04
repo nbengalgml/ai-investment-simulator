@@ -1,0 +1,95 @@
+{
+  "report_id": "rpt-20260504-1554",
+  "generated_at": "2026-05-04T15:54:12.802197Z",
+  "based_on_snapshot_id": "snap-20260504-1526",
+  "recommendations": [
+    {
+      "ticker": "SLB",
+      "action": "BUY",
+      "confidence": "MEDIUM",
+      "allocation_pct": 19.3,
+      "composite_score": 70.8,
+      "rationale": [
+        "20-day momentum of +11.9% outperforms sector average.",
+        "Analyst consensus: buy \u2014 consensus target $60.",
+        "Composite score 71/100 supports position entry."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T15:54:12.802197Z"
+    },
+    {
+      "ticker": "BKR",
+      "action": "BUY",
+      "confidence": "MEDIUM",
+      "allocation_pct": 19.3,
+      "composite_score": 70.8,
+      "rationale": [
+        "20-day momentum of +12.3% outperforms sector average.",
+        "Analyst consensus: buy \u2014 consensus target $70.",
+        "Composite score 71/100 supports position entry."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T15:54:12.802197Z"
+    },
+    {
+      "ticker": "HAL",
+      "action": "BUY",
+      "confidence": "MEDIUM",
+      "allocation_pct": 18.2,
+      "composite_score": 66.8,
+      "rationale": [
+        "20-day momentum of +7.7% outperforms sector average.",
+        "Analyst consensus: buy \u2014 consensus target $42.",
+        "Composite score 67/100 supports position entry."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T15:54:12.802197Z"
+    },
+    {
+      "ticker": "DVN",
+      "action": "BUY",
+      "confidence": "MEDIUM",
+      "allocation_pct": 16.6,
+      "composite_score": 60.8,
+      "rationale": [
+        "Analyst consensus: buy \u2014 consensus target $59.",
+        "Composite score 61/100 supports position entry.",
+        "Composite score 61/100 supports position entry."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T15:54:12.802197Z"
+    },
+    {
+      "ticker": "MPC",
+      "action": "BUY",
+      "confidence": "MEDIUM",
+      "allocation_pct": 16.6,
+      "composite_score": 60.8,
+      "rationale": [
+        "Analyst consensus: buy \u2014 consensus target $249.",
+        "Composite score 61/100 supports position entry.",
+        "Composite score 61/100 supports position entry."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T15:54:12.802197Z"
+    }
+  ],
+  "total_invested_pct": 90.0,
+  "cash_reserve_pct": 10.0,
+  "strategy_notes": "Growth | brokerage | sector: gas | BUY=5 SELL=0 HOLD=0"
+}

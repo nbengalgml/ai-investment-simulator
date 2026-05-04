@@ -1,0 +1,79 @@
+{
+  "account_type": "brokerage",
+  "target_market": "gas",
+  "budget_total": 10000.0,
+  "cash_available": 1000.0,
+  "last_updated": "2026-05-04T15:54:47.328772Z",
+  "holdings": [
+    {
+      "ticker": "SLB",
+      "shares": 34.2685,
+      "avg_cost_basis": 56.32,
+      "current_price": 56.32,
+      "market_value": 1930.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "allocation_pct": 19.3,
+      "open_date": "2026-05-04",
+      "analyst_rating": "BUY",
+      "confidence": "MEDIUM"
+    },
+    {
+      "ticker": "BKR",
+      "shares": 28.0646,
+      "avg_cost_basis": 68.77,
+      "current_price": 68.77,
+      "market_value": 1930.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "allocation_pct": 19.3,
+      "open_date": "2026-05-04",
+      "analyst_rating": "BUY",
+      "confidence": "MEDIUM"
+    },
+    {
+      "ticker": "HAL",
+      "shares": 43.6399,
+      "avg_cost_basis": 41.705,
+      "current_price": 41.705,
+      "market_value": 1820.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "allocation_pct": 18.2,
+      "open_date": "2026-05-04",
+      "analyst_rating": "BUY",
+      "confidence": "MEDIUM"
+    },
+    {
+      "ticker": "DVN",
+      "shares": 32.4821,
+      "avg_cost_basis": 51.105,
+      "current_price": 51.105,
+      "market_value": 1660.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "allocation_pct": 16.6,
+      "open_date": "2026-05-04",
+      "analyst_rating": "BUY",
+      "confidence": "MEDIUM"
+    },
+    {
+      "ticker": "MPC",
+      "shares": 6.6133,
+      "avg_cost_basis": 251.01,
+      "current_price": 251.01,
+      "market_value": 1660.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "allocation_pct": 16.6,
+      "open_date": "2026-05-04",
+      "analyst_rating": "BUY",
+      "confidence": "MEDIUM"
+    }
+  ],
+  "total_market_value": 9000.0,
+  "total_unrealized_pnl": 0.0,
+  "total_unrealized_pnl_pct": 0.0,
+  "strategy": "growth",
+  "max_positions": 5
+}

@@ -1,0 +1,27 @@
+{
+  "report_id": "rpt-20260504-1554",
+  "generated_at": "2026-05-04T15:54:12.790320Z",
+  "based_on_snapshot_id": "snap-20260504-1526",
+  "recommendations": [
+    {
+      "ticker": "BE",
+      "action": "BUY",
+      "confidence": "MEDIUM",
+      "allocation_pct": 35.0,
+      "composite_score": 69.5,
+      "rationale": [
+        "20-day momentum of +108.0% outperforms sector average.",
+        "Analyst consensus: buy \u2014 consensus target $231.",
+        "Composite score 70/100 supports position entry."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T15:54:12.790320Z"
+    }
+  ],
+  "total_invested_pct": 35.0,
+  "cash_reserve_pct": 65.0,
+  "strategy_notes": "Growth | brokerage | sector: alternative_energy | BUY=1 SELL=0 HOLD=0"
+}

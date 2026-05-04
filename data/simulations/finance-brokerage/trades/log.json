@@ -1,0 +1,191 @@
+[
+  {
+    "trade_id": "2140017c-9e3c-4e22-8d0e-9f086cda3c0d",
+    "timestamp": "2026-05-04T15:18:21.786049Z",
+    "action": "BUY",
+    "ticker": "MS",
+    "shares": 9.699,
+    "price": 188.68,
+    "total_value": 1830.0,
+    "rationale": "20-day momentum of +12.6% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "fbc4aaf6-4a3a-4f88-9c32-50683a5ab1e6",
+    "timestamp": "2026-05-04T15:18:21.786049Z",
+    "action": "BUY",
+    "ticker": "BLK",
+    "shares": 1.7258,
+    "price": 1060.375,
+    "total_value": 1830.0,
+    "rationale": "20-day momentum of +10.6% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "8ca0154c-5a7d-4a09-acfe-3b5d6b230323",
+    "timestamp": "2026-05-04T15:18:21.786049Z",
+    "action": "BUY",
+    "ticker": "COF",
+    "shares": 9.4386,
+    "price": 191.765,
+    "total_value": 1810.0,
+    "rationale": "20-day momentum of +5.9% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "85319014-d29d-4a7a-ac6f-34da1bfcbdb8",
+    "timestamp": "2026-05-04T15:18:21.786049Z",
+    "action": "BUY",
+    "ticker": "BAC",
+    "shares": 34.3544,
+    "price": 52.395,
+    "total_value": 1800.0,
+    "rationale": "Analyst consensus: strong_buy \u2014 consensus target $63.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "0ef66044-79ec-420d-8f83-8671a7917b2f",
+    "timestamp": "2026-05-04T15:18:21.786049Z",
+    "action": "BUY",
+    "ticker": "C",
+    "shares": 13.775,
+    "price": 125.59,
+    "total_value": 1730.0,
+    "rationale": "20-day momentum of +7.2% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "6699dca0-4b5c-4d92-8b63-7fea13a3f409",
+    "timestamp": "2026-05-04T15:54:47.352510Z",
+    "action": "BUY",
+    "ticker": "MS",
+    "shares": 12.1783,
+    "price": 188.04,
+    "total_value": 2290.0,
+    "rationale": "20-day momentum of +12.2% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "b03e08ba-f998-4a37-a65e-caad8680a010",
+    "timestamp": "2026-05-04T15:54:47.352510Z",
+    "action": "BUY",
+    "ticker": "BLK",
+    "shares": 2.1659,
+    "price": 1057.315,
+    "total_value": 2290.0,
+    "rationale": "20-day momentum of +10.3% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "843c767e-7c18-415b-9b5b-980a5c098649",
+    "timestamp": "2026-05-04T15:54:47.352510Z",
+    "action": "BUY",
+    "ticker": "COF",
+    "shares": 11.8805,
+    "price": 191.07,
+    "total_value": 2270.0,
+    "rationale": "20-day momentum of +5.5% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "805b1ed4-9a42-4448-a4db-1a2361260148",
+    "timestamp": "2026-05-04T15:54:47.352510Z",
+    "action": "BUY",
+    "ticker": "C",
+    "shares": 17.2911,
+    "price": 124.92,
+    "total_value": 2160.0,
+    "rationale": "20-day momentum of +6.7% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  }
+]

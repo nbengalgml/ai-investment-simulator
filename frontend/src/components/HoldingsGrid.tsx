@@ -1,10 +1,18 @@
 import type { Holding } from '../api/types'
 import { fmt } from '../utils/format'
+import { TickerBadge } from './TickerBadge'
+import { getTickerInfo } from '../data/tickers'
 
 const CONFIDENCE_COLORS = {
   HIGH: 'text-green-400 border-green-700',
   MEDIUM: 'text-yellow-400 border-yellow-700',
-  LOW: 'text-red-400 border-red-700',
+  LOW: 'text-orange-400 border-orange-700',
+}
+
+const CONFIDENCE_TOOLTIP: Record<string, string> = {
+  HIGH: '3/3 signals: momentum + analyst consensus + sentiment',
+  MEDIUM: '2/3 signals: momentum + analyst consensus',
+  LOW: '1/3 signals: at least one positive indicator',
 }
 
 interface HoldingCardProps {
@@ -14,13 +22,18 @@ interface HoldingCardProps {
 function HoldingCard({ holding: h }: HoldingCardProps) {
   const pnlPos = h.unrealized_pnl >= 0
   const confColor = CONFIDENCE_COLORS[h.confidence] ?? 'text-gray-400 border-gray-700'
+  const info = getTickerInfo(h.ticker)
 
   return (
     <div className="border border-gray-800 rounded-lg p-4 flex flex-col gap-3 hover:border-gray-600 transition-colors">
       <div className="flex items-start justify-between">
         <div>
-          <span className="text-lg font-bold tracking-wide">{h.ticker}</span>
-          <span className={`ml-2 text-xs px-1.5 py-0.5 rounded border ${confColor}`}>
+          <TickerBadge ticker={h.ticker} className="text-lg" />
+          {info && <div className="text-xs text-gray-500 mt-0.5 truncate max-w-[140px]">{info.name}</div>}
+          <span
+            className={`mt-1 inline-block text-xs px-1.5 py-0.5 rounded border ${confColor}`}
+            title={CONFIDENCE_TOOLTIP[h.confidence]}
+          >
             {h.confidence}
           </span>
         </div>

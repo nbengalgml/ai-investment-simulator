@@ -1,0 +1,296 @@
+[
+  {
+    "trade_id": "2185d079-a27a-4212-b625-8a72d15f7cb2",
+    "timestamp": "2026-05-04T15:18:21.624465Z",
+    "action": "BUY",
+    "ticker": "DDOG",
+    "shares": 12.8939,
+    "price": 145.03,
+    "total_value": 1870.0,
+    "rationale": "20-day momentum of +24.4% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "traditional_ira",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "3f45ea04-354f-44ed-882d-8db5b5bcbe8b",
+    "timestamp": "2026-05-04T15:18:21.624465Z",
+    "action": "BUY",
+    "ticker": "AMZN",
+    "shares": 6.5252,
+    "price": 274.3201,
+    "total_value": 1790.0,
+    "rationale": "20-day momentum of +28.3% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "traditional_ira",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "c191a856-0f4f-48fb-b4aa-6fbe914d529a",
+    "timestamp": "2026-05-04T15:18:21.624465Z",
+    "action": "BUY",
+    "ticker": "GOOGL",
+    "shares": 4.6866,
+    "price": 381.94,
+    "total_value": 1790.0,
+    "rationale": "20-day momentum of +25.0% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "traditional_ira",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "020cbbed-acd9-464e-9e7c-6f3347e037ad",
+    "timestamp": "2026-05-04T15:18:21.624465Z",
+    "action": "BUY",
+    "ticker": "MSFT",
+    "shares": 4.2611,
+    "price": 417.73,
+    "total_value": 1780.0,
+    "rationale": "20-day momentum of +12.2% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "traditional_ira",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "c90470fa-1ed0-48ab-8fd5-4c9a7be6ef02",
+    "timestamp": "2026-05-04T15:18:21.624465Z",
+    "action": "BUY",
+    "ticker": "HUBS",
+    "shares": 7.0973,
+    "price": 250.8,
+    "total_value": 1780.0,
+    "rationale": "20-day momentum of +10.2% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "traditional_ira",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "fd573e9a-90a9-4c89-92c8-d94cedc784b9",
+    "timestamp": "2026-05-04T15:51:30.716033Z",
+    "action": "BUY",
+    "ticker": "DDOG",
+    "shares": 17.0119,
+    "price": 144.605,
+    "total_value": 2460.0,
+    "rationale": "20-day momentum of +24.1% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "traditional_ira",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "dc1172f5-efe6-4522-b9bd-415d25eea1a7",
+    "timestamp": "2026-05-04T15:51:30.716033Z",
+    "action": "BUY",
+    "ticker": "AMZN",
+    "shares": 8.5936,
+    "price": 273.46,
+    "total_value": 2350.0,
+    "rationale": "20-day momentum of +27.9% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "traditional_ira",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "d7040ef5-1797-408d-be28-fdbb7a7fc968",
+    "timestamp": "2026-05-04T15:51:30.716033Z",
+    "action": "BUY",
+    "ticker": "GOOGL",
+    "shares": 6.1583,
+    "price": 381.6,
+    "total_value": 2350.0,
+    "rationale": "20-day momentum of +24.9% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "traditional_ira",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "b36ceba2-6ae7-439b-b24c-3c594bd73f7e",
+    "timestamp": "2026-05-04T15:51:30.716033Z",
+    "action": "BUY",
+    "ticker": "MSFT",
+    "shares": 5.6187,
+    "price": 416.4699,
+    "total_value": 2340.0,
+    "rationale": "20-day momentum of +11.9% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "traditional_ira",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "81794e5e-502c-4078-b869-a0a89db202bc",
+    "timestamp": "2026-05-04T15:54:47.248716Z",
+    "action": "BUY",
+    "ticker": "DDOG",
+    "shares": 13.6233,
+    "price": 144.605,
+    "total_value": 1970.0,
+    "rationale": "20-day momentum of +24.1% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "traditional_ira",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "9b589f5c-70ae-4412-bcd5-839d2b7f112b",
+    "timestamp": "2026-05-04T15:54:47.248716Z",
+    "action": "BUY",
+    "ticker": "AMZN",
+    "shares": 6.9114,
+    "price": 273.46,
+    "total_value": 1890.0,
+    "rationale": "20-day momentum of +27.9% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "traditional_ira",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "4e8b4b68-1695-4331-8091-31eef6d5bce4",
+    "timestamp": "2026-05-04T15:54:47.248716Z",
+    "action": "BUY",
+    "ticker": "GOOGL",
+    "shares": 4.9528,
+    "price": 381.6,
+    "total_value": 1890.0,
+    "rationale": "20-day momentum of +24.9% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "traditional_ira",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "49382046-50c2-49e0-9083-5d797ff7738d",
+    "timestamp": "2026-05-04T15:54:47.248716Z",
+    "action": "BUY",
+    "ticker": "MSFT",
+    "shares": 4.5141,
+    "price": 416.4699,
+    "total_value": 1880.0,
+    "rationale": "20-day momentum of +11.9% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "traditional_ira",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "f9a6bb79-ebb3-47e4-a913-10ee8786430a",
+    "timestamp": "2026-05-04T15:54:47.248716Z",
+    "action": "BUY",
+    "ticker": "HUBS",
+    "shares": 7.4841,
+    "price": 251.2,
+    "total_value": 1880.0,
+    "rationale": "20-day momentum of +10.4% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "traditional_ira",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  }
+]

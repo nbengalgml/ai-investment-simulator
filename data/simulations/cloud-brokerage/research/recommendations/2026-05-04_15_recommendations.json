@@ -1,0 +1,78 @@
+{
+  "report_id": "rpt-20260504-1554",
+  "generated_at": "2026-05-04T15:54:12.746604Z",
+  "based_on_snapshot_id": "snap-20260504-1526",
+  "recommendations": [
+    {
+      "ticker": "DDOG",
+      "action": "BUY",
+      "confidence": "MEDIUM",
+      "allocation_pct": 23.3,
+      "composite_score": 83.5,
+      "rationale": [
+        "20-day momentum of +24.1% outperforms sector average.",
+        "Analyst consensus: strong_buy \u2014 consensus target $177.",
+        "Composite score 84/100 supports position entry."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T15:54:12.746604Z"
+    },
+    {
+      "ticker": "AMZN",
+      "action": "BUY",
+      "confidence": "MEDIUM",
+      "allocation_pct": 22.3,
+      "composite_score": 80.0,
+      "rationale": [
+        "20-day momentum of +27.9% outperforms sector average.",
+        "Analyst consensus: strong_buy \u2014 consensus target $308.",
+        "Recent SEC filing: 8-K filed 2026-04-29 \u2014 AMZN."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T15:54:12.746604Z"
+    },
+    {
+      "ticker": "GOOGL",
+      "action": "BUY",
+      "confidence": "MEDIUM",
+      "allocation_pct": 22.3,
+      "composite_score": 80.0,
+      "rationale": [
+        "20-day momentum of +24.9% outperforms sector average.",
+        "Analyst consensus: strong_buy \u2014 consensus target $414.",
+        "Recent SEC filing: 8-K filed 2026-04-29 \u2014 GOOGL."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T15:54:12.746604Z"
+    },
+    {
+      "ticker": "MSFT",
+      "action": "BUY",
+      "confidence": "MEDIUM",
+      "allocation_pct": 22.2,
+      "composite_score": 79.5,
+      "rationale": [
+        "20-day momentum of +11.9% outperforms sector average.",
+        "Analyst consensus: strong_buy \u2014 consensus target $561.",
+        "Recent SEC filing: 8-K filed 2026-04-29 \u2014 MSFT."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T15:54:12.746604Z"
+    }
+  ],
+  "total_invested_pct": 90.1,
+  "cash_reserve_pct": 9.9,
+  "strategy_notes": "Growth | brokerage | sector: cloud | BUY=4 SELL=0 HOLD=0"
+}

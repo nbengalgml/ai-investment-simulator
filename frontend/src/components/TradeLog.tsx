@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import type { TradeLogEntry } from '../api/types'
 import { fmt } from '../utils/format'
+import { TickerBadge } from './TickerBadge'
 
 const ACTION_COLORS: Record<string, string> = {
   BUY: 'text-green-400',
@@ -66,7 +67,7 @@ export function TradeLog({ trades }: Props) {
                 <td className={`py-2 pr-4 font-semibold ${ACTION_COLORS[t.action] ?? 'text-gray-300'}`}>
                   {t.action}
                 </td>
-                <td className="py-2 pr-4 font-bold">{t.ticker}</td>
+                <td className="py-2 pr-4"><TickerBadge ticker={t.ticker} /></td>
                 <td className="py-2 pr-4 text-right tabular-nums text-gray-300">
                   {t.shares.toFixed(3)}
                 </td>

@@ -1,0 +1,95 @@
+{
+  "report_id": "rpt-20260504-1554",
+  "generated_at": "2026-05-04T15:54:12.791647Z",
+  "based_on_snapshot_id": "snap-20260504-1526",
+  "recommendations": [
+    {
+      "ticker": "ARRY",
+      "action": "BUY",
+      "confidence": "LOW",
+      "allocation_pct": 20.6,
+      "composite_score": 74.2,
+      "rationale": [
+        "20-day momentum of +12.1% outperforms sector average.",
+        "Analyst consensus: buy \u2014 consensus target $10.",
+        "Composite score 74/100 supports position entry."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T15:54:12.791647Z"
+    },
+    {
+      "ticker": "BE",
+      "action": "BUY",
+      "confidence": "MEDIUM",
+      "allocation_pct": 19.3,
+      "composite_score": 69.5,
+      "rationale": [
+        "20-day momentum of +108.0% outperforms sector average.",
+        "Analyst consensus: buy \u2014 consensus target $231.",
+        "Composite score 70/100 supports position entry."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T15:54:12.791647Z"
+    },
+    {
+      "ticker": "FSLR",
+      "action": "BUY",
+      "confidence": "LOW",
+      "allocation_pct": 18.5,
+      "composite_score": 66.8,
+      "rationale": [
+        "20-day momentum of +8.0% outperforms sector average.",
+        "Analyst consensus: buy \u2014 consensus target $245.",
+        "Recent SEC filing: 8-K filed 2026-04-30 \u2014 FSLR."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T15:54:12.791647Z"
+    },
+    {
+      "ticker": "PLUG",
+      "action": "BUY",
+      "confidence": "LOW",
+      "allocation_pct": 18.3,
+      "composite_score": 66.0,
+      "rationale": [
+        "20-day momentum of +23.8% outperforms sector average.",
+        "Composite score 66/100 supports position entry.",
+        "Composite score 66/100 supports position entry."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T15:54:12.791647Z"
+    },
+    {
+      "ticker": "CSIQ",
+      "action": "BUY",
+      "confidence": "LOW",
+      "allocation_pct": 18.3,
+      "composite_score": 66.0,
+      "rationale": [
+        "20-day momentum of +30.1% outperforms sector average.",
+        "Composite score 66/100 supports position entry.",
+        "Composite score 66/100 supports position entry."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T15:54:12.791647Z"
+    }
+  ],
+  "total_invested_pct": 95.0,
+  "cash_reserve_pct": 5.0,
+  "strategy_notes": "Growth | traditional_ira | sector: alternative_energy | BUY=5 SELL=0 HOLD=0"
+}

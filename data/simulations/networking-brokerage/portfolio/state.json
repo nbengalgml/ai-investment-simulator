@@ -1,0 +1,79 @@
+{
+  "account_type": "brokerage",
+  "target_market": "networking",
+  "budget_total": 10000.0,
+  "cash_available": 1010.0,
+  "last_updated": "2026-05-04T15:54:47.275903Z",
+  "holdings": [
+    {
+      "ticker": "RBBN",
+      "shares": 715.3558,
+      "avg_cost_basis": 2.67,
+      "current_price": 2.67,
+      "market_value": 1910.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "allocation_pct": 19.1,
+      "open_date": "2026-05-04",
+      "analyst_rating": "BUY",
+      "confidence": "MEDIUM"
+    },
+    {
+      "ticker": "ANET",
+      "shares": 10.5555,
+      "avg_cost_basis": 173.37,
+      "current_price": 173.37,
+      "market_value": 1830.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "allocation_pct": 18.3,
+      "open_date": "2026-05-04",
+      "analyst_rating": "BUY",
+      "confidence": "MEDIUM"
+    },
+    {
+      "ticker": "EXTR",
+      "shares": 80.5635,
+      "avg_cost_basis": 22.715,
+      "current_price": 22.715,
+      "market_value": 1830.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "allocation_pct": 18.3,
+      "open_date": "2026-05-04",
+      "analyst_rating": "BUY",
+      "confidence": "MEDIUM"
+    },
+    {
+      "ticker": "VIAV",
+      "shares": 34.075,
+      "avg_cost_basis": 53.705,
+      "current_price": 53.705,
+      "market_value": 1830.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "allocation_pct": 18.3,
+      "open_date": "2026-05-04",
+      "analyst_rating": "BUY",
+      "confidence": "MEDIUM"
+    },
+    {
+      "ticker": "CIEN",
+      "shares": 2.9581,
+      "avg_cost_basis": 537.5,
+      "current_price": 537.5,
+      "market_value": 1590.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "allocation_pct": 15.9,
+      "open_date": "2026-05-04",
+      "analyst_rating": "BUY",
+      "confidence": "MEDIUM"
+    }
+  ],
+  "total_market_value": 8990.0,
+  "total_unrealized_pnl": 0.0,
+  "total_unrealized_pnl_pct": 0.0,
+  "strategy": "growth",
+  "max_positions": 5
+}

@@ -50,6 +50,7 @@ export function Dashboard() {
   const [savedAt, setSavedAt] = useState<Date | null>(null)
   const [cycleStep, setCycleStep] = useState<string | null>(null)
   const [cycleError, setCycleError] = useState<string | null>(null)
+  const [refreshAllStep, setRefreshAllStep] = useState<string | null>(null)
   const pollRef = useRef<ReturnType<typeof setInterval> | null>(null)
   const queryClient = useQueryClient()
 
@@ -97,6 +98,49 @@ export function Dashboard() {
     }, 3_000)
   }
 
+  const runAllCycles = async () => {
+    if (refreshAllStep) return
+    setRefreshAllStep('Market Research (6 sectors)…')
+    try {
+      // 1. Market researcher — once per sector (shared data)
+      await Promise.all(
+        SECTORS.map(s => trigger.mutateAsync({ agent: 'market-researcher', sector: s, account_type: 'brokerage' }))
+      )
+      await sleep(20_000)
+
+      // 2. Analyst — all 12 sims in parallel
+      setRefreshAllStep('Analyst (12 sims)…')
+      await Promise.all(
+        SECTORS.flatMap(s =>
+          ['brokerage', 'traditional_ira'].map(acct =>
+            trigger.mutateAsync({ agent: 'analyst', sector: s, account_type: acct })
+          )
+        )
+      )
+      await sleep(20_000)
+
+      // 3. CEO — all 12 sims in parallel
+      setRefreshAllStep('CEO (12 sims)…')
+      await Promise.all(
+        SECTORS.flatMap(s =>
+          ['brokerage', 'traditional_ira'].map(acct =>
+            trigger.mutateAsync({ agent: 'ceo', sector: s, account_type: acct })
+          )
+        )
+      )
+      await sleep(20_000)
+    } catch {
+      setRefreshAllStep(null)
+      return
+    }
+
+    setRefreshAllStep('Refreshing data…')
+    await queryClient.invalidateQueries({ queryKey: ['simulations'] })
+    await portfolio.refetch()
+    simulations.refetch()
+    setRefreshAllStep(null)
+  }
+
   const handleTrigger = (agent: string) => {
     trigger.mutate({ agent, sector, account_type: accountTab })
   }
@@ -126,8 +170,25 @@ export function Dashboard() {
             {t.label}
           </button>
         ))}
-        <div className="ml-auto flex items-center gap-2 text-xs text-gray-600 pr-1">
-          Comparing {SECTORS.length * 2} simulations
+        <div className="ml-auto flex items-center gap-3 pr-2">
+          {refreshAllStep ? (
+            <div className="flex items-center gap-1.5 text-xs text-blue-400">
+              <svg className="animate-spin h-3 w-3" viewBox="0 0 24 24" fill="none">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/>
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"/>
+              </svg>
+              {refreshAllStep}
+            </div>
+          ) : (
+            <button
+              onClick={runAllCycles}
+              disabled={!!cycleStep}
+              className="flex items-center gap-1.5 text-xs px-3 py-1.5 bg-blue-700 hover:bg-blue-600 disabled:opacity-40 text-white rounded transition-colors"
+            >
+              <span>↻</span> Refresh All 12
+            </button>
+          )}
+          <span className="text-xs text-gray-600">{SECTORS.length * 2} simulations</span>
         </div>
       </div>
 

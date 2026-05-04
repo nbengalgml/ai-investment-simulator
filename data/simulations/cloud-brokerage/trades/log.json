@@ -1,0 +1,191 @@
+[
+  {
+    "trade_id": "d07d6cfb-0570-4b0f-a2f0-b4b75391036d",
+    "timestamp": "2026-05-04T15:18:21.596754Z",
+    "action": "BUY",
+    "ticker": "DDOG",
+    "shares": 12.8939,
+    "price": 145.03,
+    "total_value": 1870.0,
+    "rationale": "20-day momentum of +24.4% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "36e68a51-024c-474d-986f-a0c8140897ec",
+    "timestamp": "2026-05-04T15:18:21.596754Z",
+    "action": "BUY",
+    "ticker": "AMZN",
+    "shares": 6.5252,
+    "price": 274.3201,
+    "total_value": 1790.0,
+    "rationale": "20-day momentum of +28.3% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "38d91a59-0446-461b-b0fb-95a1dfb06882",
+    "timestamp": "2026-05-04T15:18:21.596754Z",
+    "action": "BUY",
+    "ticker": "GOOGL",
+    "shares": 4.6866,
+    "price": 381.94,
+    "total_value": 1790.0,
+    "rationale": "20-day momentum of +25.0% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "57bb0c7b-d26a-42a5-b543-80c72c498f54",
+    "timestamp": "2026-05-04T15:18:21.596754Z",
+    "action": "BUY",
+    "ticker": "MSFT",
+    "shares": 4.2611,
+    "price": 417.73,
+    "total_value": 1780.0,
+    "rationale": "20-day momentum of +12.2% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "7c26ba5f-470d-45d7-a2e9-7f2453372bec",
+    "timestamp": "2026-05-04T15:18:21.596754Z",
+    "action": "BUY",
+    "ticker": "HUBS",
+    "shares": 7.0973,
+    "price": 250.8,
+    "total_value": 1780.0,
+    "rationale": "20-day momentum of +10.2% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "30273896-8bfa-4608-a5b9-b58e29958ebb",
+    "timestamp": "2026-05-04T15:54:47.241412Z",
+    "action": "BUY",
+    "ticker": "DDOG",
+    "shares": 16.1129,
+    "price": 144.605,
+    "total_value": 2330.0,
+    "rationale": "20-day momentum of +24.1% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "225b9186-d993-450a-8f84-9feb983447ad",
+    "timestamp": "2026-05-04T15:54:47.241412Z",
+    "action": "BUY",
+    "ticker": "AMZN",
+    "shares": 8.1548,
+    "price": 273.46,
+    "total_value": 2230.0,
+    "rationale": "20-day momentum of +27.9% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "d7321595-4efd-43f0-81d5-ae7614959a91",
+    "timestamp": "2026-05-04T15:54:47.241412Z",
+    "action": "BUY",
+    "ticker": "GOOGL",
+    "shares": 5.8438,
+    "price": 381.6,
+    "total_value": 2230.0,
+    "rationale": "20-day momentum of +24.9% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  },
+  {
+    "trade_id": "f1209629-4f37-490c-bcdd-9f0a9782da07",
+    "timestamp": "2026-05-04T15:54:47.241412Z",
+    "action": "BUY",
+    "ticker": "MSFT",
+    "shares": 5.3305,
+    "price": 416.4699,
+    "total_value": 2220.0,
+    "rationale": "20-day momentum of +11.9% outperforms sector average.",
+    "data_sources": [
+      "yfinance",
+      "SEC EDGAR"
+    ],
+    "approved_by": "CEO",
+    "account_type": "brokerage",
+    "simulated_tax_impact": {
+      "holding_period_days": 0,
+      "gain_loss": 0.0,
+      "tax_treatment": "n/a"
+    }
+  }
+]

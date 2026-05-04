@@ -1,0 +1,79 @@
+{
+  "account_type": "traditional_ira",
+  "target_market": "alternative_energy",
+  "budget_total": 10000.0,
+  "cash_available": 500.0,
+  "last_updated": "2026-05-04T15:54:47.318320Z",
+  "holdings": [
+    {
+      "ticker": "ARRY",
+      "shares": 269.1052,
+      "avg_cost_basis": 7.655,
+      "current_price": 7.655,
+      "market_value": 2060.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "allocation_pct": 20.6,
+      "open_date": "2026-05-04",
+      "analyst_rating": "BUY",
+      "confidence": "LOW"
+    },
+    {
+      "ticker": "BE",
+      "shares": 6.8259,
+      "avg_cost_basis": 282.745,
+      "current_price": 282.745,
+      "market_value": 1930.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "allocation_pct": 19.3,
+      "open_date": "2026-05-04",
+      "analyst_rating": "BUY",
+      "confidence": "MEDIUM"
+    },
+    {
+      "ticker": "FSLR",
+      "shares": 8.9105,
+      "avg_cost_basis": 207.62,
+      "current_price": 207.62,
+      "market_value": 1850.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "allocation_pct": 18.5,
+      "open_date": "2026-05-04",
+      "analyst_rating": "BUY",
+      "confidence": "LOW"
+    },
+    {
+      "ticker": "PLUG",
+      "shares": 586.5385,
+      "avg_cost_basis": 3.12,
+      "current_price": 3.12,
+      "market_value": 1830.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "allocation_pct": 18.3,
+      "open_date": "2026-05-04",
+      "analyst_rating": "BUY",
+      "confidence": "LOW"
+    },
+    {
+      "ticker": "CSIQ",
+      "shares": 116.1168,
+      "avg_cost_basis": 15.76,
+      "current_price": 15.76,
+      "market_value": 1830.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "allocation_pct": 18.3,
+      "open_date": "2026-05-04",
+      "analyst_rating": "BUY",
+      "confidence": "LOW"
+    }
+  ],
+  "total_market_value": 9500.0,
+  "total_unrealized_pnl": 0.0,
+  "total_unrealized_pnl_pct": 0.0,
+  "strategy": "growth",
+  "max_positions": 5
+}
