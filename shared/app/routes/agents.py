@@ -29,6 +29,7 @@ _AGENT_SCRIPTS: dict[str, str] = {
 
 class TriggerPayload(BaseModel):
     sector: str = "AI"
+    account_type: str = "brokerage"
     no_claude: bool = False
 
 
@@ -38,8 +39,11 @@ class TriggerResponse(BaseModel):
     message: str
 
 
-async def _run_agent(script: Path, sector: str, no_claude: bool) -> None:
+async def _run_agent(script: Path, sector: str, account_type: str, no_claude: bool) -> None:
     args = [sys.executable, str(script), "--sector", sector]
+    # market-researcher doesn't have --account-type or --sim-id (shared data)
+    if script.parent.name not in ("market-researcher",):
+        args += ["--account-type", account_type]
     if no_claude:
         args.append("--no-claude")
     try:
@@ -74,7 +78,7 @@ async def trigger_agent(
     if not script.exists():
         raise HTTPException(status_code=503, detail=f"Agent script not found: {script}")
 
-    background_tasks.add_task(_run_agent, script, payload.sector, payload.no_claude)
+    background_tasks.add_task(_run_agent, script, payload.sector, payload.account_type, payload.no_claude)
     logger.info("Accepted trigger for %s | sector=%s", agent, payload.sector)
 
     return TriggerResponse(

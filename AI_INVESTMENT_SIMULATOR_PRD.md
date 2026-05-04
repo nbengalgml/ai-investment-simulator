@@ -70,17 +70,18 @@ ai-investment-simulator/
 │   └── claude_client/               # Anthropic SDK wrapper with prompt templates
 │
 ├── data/                            # JSON flat file persistence (gitignored except schema)
-│   ├── portfolio/
-│   │   ├── state.json               # Current holdings, cash, account metadata
-│   │   └── history/                 # Daily snapshots: YYYY-MM-DD.json
-│   ├── trades/
-│   │   └── log.json                 # Append-only simulated trade log
-│   ├── reports/
-│   │   ├── daily/
-│   │   ├── weekly/
-│   │   └── monthly/
+│   ├── simulations/                 # One sub-dir per simulation track
+│   │   └── {sector}-{account_type}/ # e.g. AI-brokerage, cloud-traditional_ira
+│   │       ├── portfolio/
+│   │       │   ├── state.json       # Current holdings, cash, account metadata
+│   │       │   └── history/         # Daily snapshots: YYYY-MM-DD.json
+│   │       ├── trades/
+│   │       │   └── log.json         # Append-only trade log with full rationale
+│   │       ├── reports/daily/       # CEO daily executive summaries
+│   │       └── research/
+│   │           └── recommendations/ # Analyst reports (sim-specific — tax rules differ)
 │   ├── research/
-│   │   └── market_snapshots/        # Raw market research outputs per cycle
+│   │   └── market_snapshots/        # Shared market data (fetched once per sector/cycle)
 │   └── agent_memory/                # Per-agent MEMORY.md state exports
 │
 ├── frontend/                        # React + TypeScript dashboard
@@ -422,18 +423,22 @@ agents/<agent-name>/
 | Method | Path | Description |
 |---|---|---|
 | GET | `/health` | Service health check |
-| GET | `/portfolio` | Current portfolio state |
-| GET | `/portfolio/history` | All daily snapshots |
-| GET | `/trades` | Full simulated trade log |
-| GET | `/reports/daily` | List of daily reports |
-| GET | `/reports/daily/{date}` | Specific daily report |
-| GET | `/reports/weekly/{year}/{week}` | Weekly performance report |
-| GET | `/reports/monthly/{year}/{month}` | Monthly performance report |
-| GET | `/research/latest` | Latest market research snapshot |
-| GET | `/agents/status` | All agent last-run timestamps + status |
-| POST | `/agents/{agent}/trigger` | Manually trigger an agent cycle |
-| POST | `/settings` | Update budget, account type, target market |
-| GET | `/stocks/{ticker}` | Price history + analysis for a ticker |
+| GET | `/portfolio` | Current portfolio state (legacy single-sim) |
+| GET | `/portfolio/history` | All daily snapshots (legacy) |
+| GET | `/trades` | Full simulated trade log (legacy) |
+| GET | `/reports/daily` | List of daily reports (legacy) |
+| GET | `/reports/daily/{date}` | Specific daily report (legacy) |
+| GET | `/agents/status` | All agent script availability |
+| POST | `/agents/{agent}/trigger` | Trigger agent — body: `{sector, account_type, no_claude}` |
+| POST | `/settings` | Update global defaults |
+| GET | `/simulations` | Leaderboard: all sim cards with P&L summary |
+| GET | `/simulations/{sim_id}/portfolio` | Portfolio for a specific sim |
+| GET | `/simulations/{sim_id}/portfolio/history` | Daily history for a sim |
+| GET | `/simulations/{sim_id}/trades` | Trade log for a sim (newest first) |
+| GET | `/simulations/{sim_id}/reports/daily` | All daily reports for a sim |
+| GET | `/simulations/{sim_id}/reports/daily/{date}` | Specific report for a sim |
+
+**sim_id format**: `{sector}-{account_type}` — e.g. `AI-brokerage`, `cloud-traditional_ira`
 
 ---
 
@@ -443,14 +448,16 @@ agents/<agent-name>/
 Bloomberg terminal meets modern fintech — high information density, dark-first theme, monospace numerical displays, green/red P&L coloring (with accessible alternatives), minimal chrome, maximum data.
 
 ### 6.2 Key Components
-- **Portfolio Header Bar**: Total value, day P&L ($ and %), cash available, account type badge, target market badge
-- **Holdings Grid**: Card per stock — ticker, price, shares, P&L, allocation %, confidence badge, sparkline (7-day), action buttons (view detail)
-- **Allocation Donut Chart**: Visual breakdown of portfolio allocation including cash
-- **P&L Chart**: Area chart with day/week/month toggle (Recharts AreaChart)
-- **Trade Log Table**: Sortable/filterable, shows action, ticker, shares, price, rationale preview, timestamp
-- **Daily Report Panel**: Structured display of CEO executive summary + signal highlights
-- **Settings Panel**: Budget input, account type selector (Brokerage / Traditional IRA), target market multi-select (AI, Cloud, Networking, Alternative Energy, Gas, Finance)
-- **Agent Status Sidebar**: Last run time + status (OK/RUNNING/ERROR) for each agent
+- **Account Type Parent Tabs**: `Brokerage (post-tax)` | `Traditional IRA (pre-tax)` — top-level switch
+- **Sector Sidebar**: Picker for AI / Cloud / Networking / Alternative Energy / Gas / Finance
+- **Simulation Leaderboard**: Live table of all sims sorted by total return % — click any row to jump to that sim
+- **Portfolio Header Bar**: Total value, day P&L, cash, strategy badge for the active sim
+- **Holdings Grid**: Card per stock — ticker, price, shares, P&L, allocation %, confidence badge
+- **P&L Chart**: Area chart with 7D/30D/90D toggle per sim (Recharts AreaChart)
+- **Trade Log**: Full audit log with rationale per trade, filterable by BUY/SELL/HOLD
+- **Daily Report Panel**: CEO executive summary, top signals, next-day watchlist per sim
+- **↻ Run Cycle button**: Inline in tab bar — triggers market-researcher → analyst → ceo for the active sim
+- **Agent Status Sidebar**: Script-existence check per agent
 
 ### 6.3 Polling Strategy
 - Portfolio state: 60-second polling via TanStack Query

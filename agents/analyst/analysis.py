@@ -212,6 +212,7 @@ def run_analysis(
     snapshot: MarketResearchSnapshot,
     portfolio: PortfolioState,
     use_claude: bool = True,
+    out_dir: Optional[Path] = None,
 ) -> AnalystReport:
     avg_momentum = _sector_avg_momentum(snapshot.stocks)
     signal_map = {s.ticker: s for s in snapshot.stocks}
@@ -347,9 +348,8 @@ def run_analysis(
 
     # ── 8. Persist ────────────────────────────────────────────────────────────
     ts = now.strftime("%Y-%m-%d_%H")
-    out_path = (
-        _storage.DATA_DIR / "research" / "recommendations" / f"{ts}_recommendations.json"
-    )
+    base = out_dir if out_dir is not None else _storage.DATA_DIR / "research" / "recommendations"
+    out_path = base / f"{ts}_recommendations.json"
     _storage.write_json(out_path, report.model_dump(mode="json"))
     logger.info(
         "Analyst report saved → %s | BUY=%d SELL=%d HOLD=%d",

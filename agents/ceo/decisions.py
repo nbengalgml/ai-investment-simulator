@@ -425,9 +425,11 @@ def run_ceo_cycle(
     portfolio: PortfolioState,
     snapshot: MarketResearchSnapshot,
     use_claude: bool = True,
+    sim_d: "Path | None" = None,
 ) -> tuple[DailyReport, PortfolioState, list[TradeLogEntry]]:
     today = date.today()
     signal_map = {s.ticker: s for s in snapshot.stocks}
+    base = sim_d if sim_d is not None else _storage.DATA_DIR
 
     # 1. Approve / reject
     approved, rejected = approve_recommendations(analyst_report, portfolio)
@@ -446,27 +448,27 @@ def run_ceo_cycle(
 
     # 5. Persist portfolio state
     _storage.write_json(
-        _storage.DATA_DIR / "portfolio" / "state.json",
+        base / "portfolio" / "state.json",
         updated_portfolio.model_dump(mode="json"),
     )
 
     # 6. Persist portfolio history snapshot
     _storage.write_json(
-        _storage.DATA_DIR / "portfolio" / "history" / f"{today.isoformat()}.json",
+        base / "portfolio" / "history" / f"{today.isoformat()}.json",
         updated_portfolio.model_dump(mode="json"),
     )
 
     # 7. Append to trade log
     for entry in trade_log:
         _storage.append_json_list(
-            _storage.DATA_DIR / "trades" / "log.json",
+            base / "trades" / "log.json",
             entry.model_dump(mode="json"),
         )
 
     # 8. Persist daily report
     ts = today.isoformat()
     _storage.write_json(
-        _storage.DATA_DIR / "reports" / "daily" / f"{ts}_executive_summary.json",
+        base / "reports" / "daily" / f"{ts}_executive_summary.json",
         daily_report.model_dump(mode="json"),
     )
 

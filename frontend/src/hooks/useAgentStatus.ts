@@ -13,8 +13,8 @@ export function useAgentStatus() {
 export function useTriggerAgent() {
   const queryClient = useQueryClient()
   return useMutation({
-    mutationFn: ({ agent, sector }: { agent: string; sector?: string }) =>
-      api.triggerAgent(agent, sector),
+    mutationFn: ({ agent, sector, account_type }: { agent: string; sector?: string; account_type?: string }) =>
+      api.triggerAgent(agent, sector, account_type),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['agents', 'status'] })
     },

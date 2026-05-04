@@ -71,6 +71,20 @@ export interface DailyReport {
 
 export type AgentStatusMap = Record<string, boolean>
 
+export interface SimulationSummary {
+  sim_id: string
+  sector: string
+  account_type: AccountType
+  has_data: boolean
+  total_market_value?: number
+  budget_total?: number
+  total_unrealized_pnl?: number
+  total_unrealized_pnl_pct?: number
+  cash_available?: number
+  holdings_count?: number
+  last_updated?: string
+}
+
 export interface Settings {
   budget_total: number
   account_type: AccountType

@@ -37,13 +37,13 @@ def _load_latest_snapshot(sector: str) -> MarketResearchSnapshot | None:
     return MarketResearchSnapshot.model_validate(data)
 
 
-def _load_portfolio() -> PortfolioState:
-    state_path = _storage.DATA_DIR / "portfolio" / "state.json"
+def _load_portfolio(sim_d: Path, sector: str, account_type: AccountType) -> PortfolioState:
+    state_path = sim_d / "portfolio" / "state.json"
     if not state_path.exists():
         budget = float(os.getenv("DEFAULT_BUDGET", "10000"))
         return PortfolioState(
-            account_type=AccountType(os.getenv("DEFAULT_ACCOUNT_TYPE", "brokerage")),
-            target_market=os.getenv("DEFAULT_TARGET_MARKET", "AI"),
+            account_type=account_type,
+            target_market=sector,
             budget_total=budget,
             cash_available=budget,
             last_updated=datetime.now(timezone.utc),
@@ -57,26 +57,37 @@ def _load_portfolio() -> PortfolioState:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Analyst Agent")
+    parser.add_argument("--sector", default=os.getenv("DEFAULT_TARGET_MARKET", "AI"))
     parser.add_argument(
-        "--sector",
-        default=os.getenv("DEFAULT_TARGET_MARKET", "AI"),
-        help="Sector matching the latest Market Researcher snapshot",
+        "--account-type",
+        default=os.getenv("DEFAULT_ACCOUNT_TYPE", "brokerage"),
+        choices=["brokerage", "traditional_ira"],
     )
+    parser.add_argument("--sim-id", default=None, help="Override sim_id (default: sector-account_type)")
     parser.add_argument("--no-claude", action="store_true")
     args = parser.parse_args()
+
+    sim_id = args.sim_id or _storage.make_sim_id(args.sector, args.account_type)
+    sim_d = _storage.sim_dir(sim_id)
+    account_type = AccountType(args.account_type)
 
     snapshot = _load_latest_snapshot(args.sector)
     if snapshot is None:
         sys.exit(1)
 
-    portfolio = _load_portfolio()
-    report = run_analysis(snapshot, portfolio, use_claude=not args.no_claude)
+    portfolio = _load_portfolio(sim_d, args.sector, account_type)
+    report = run_analysis(
+        snapshot,
+        portfolio,
+        use_claude=not args.no_claude,
+        out_dir=sim_d / "research" / "recommendations",
+    )
 
     buys = [r for r in report.recommendations if r.action == "BUY"]
     sells = [r for r in report.recommendations if r.action == "SELL"]
     holds = [r for r in report.recommendations if r.action == "HOLD"]
     print(
-        f"Report: {report.report_id} | "
+        f"[{sim_id}] Report: {report.report_id} | "
         f"BUY={len(buys)} SELL={len(sells)} HOLD={len(holds)} | "
         f"invested={report.total_invested_pct:.1f}% cash={report.cash_reserve_pct:.1f}%"
     )

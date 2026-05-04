@@ -27,8 +27,8 @@ from data_models import AccountType, AnalystReport, MarketResearchSnapshot, Port
 from decisions import run_ceo_cycle  # noqa: E402
 
 
-def _load_latest_analyst_report() -> AnalystReport | None:
-    recs_dir = _storage.DATA_DIR / "research" / "recommendations"
+def _load_latest_analyst_report(sim_d: Path) -> AnalystReport | None:
+    recs_dir = sim_d / "research" / "recommendations"
     files = sorted(recs_dir.glob("*.json"), reverse=True)
     if not files:
         logging.error("No analyst report found in %s", recs_dir)
@@ -45,13 +45,13 @@ def _load_latest_snapshot(sector: str) -> MarketResearchSnapshot | None:
     return MarketResearchSnapshot.model_validate(_storage.read_json(files[0]))
 
 
-def _load_portfolio() -> PortfolioState:
-    state_path = _storage.DATA_DIR / "portfolio" / "state.json"
+def _load_portfolio(sim_d: Path, sector: str, account_type: AccountType) -> PortfolioState:
+    state_path = sim_d / "portfolio" / "state.json"
     if not state_path.exists():
         budget = float(os.getenv("DEFAULT_BUDGET", "10000"))
         return PortfolioState(
-            account_type=AccountType(os.getenv("DEFAULT_ACCOUNT_TYPE", "brokerage")),
-            target_market=os.getenv("DEFAULT_TARGET_MARKET", "AI"),
+            account_type=account_type,
+            target_market=sector,
             budget_total=budget,
             cash_available=budget,
             last_updated=datetime.now(timezone.utc),
@@ -65,15 +65,21 @@ def _load_portfolio() -> PortfolioState:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="CEO Agent")
+    parser.add_argument("--sector", default=os.getenv("DEFAULT_TARGET_MARKET", "AI"))
     parser.add_argument(
-        "--sector",
-        default=os.getenv("DEFAULT_TARGET_MARKET", "AI"),
-        help="Sector for the market snapshot",
+        "--account-type",
+        default=os.getenv("DEFAULT_ACCOUNT_TYPE", "brokerage"),
+        choices=["brokerage", "traditional_ira"],
     )
+    parser.add_argument("--sim-id", default=None, help="Override sim_id (default: sector-account_type)")
     parser.add_argument("--no-claude", action="store_true")
     args = parser.parse_args()
 
-    analyst_report = _load_latest_analyst_report()
+    sim_id = args.sim_id or _storage.make_sim_id(args.sector, args.account_type)
+    sim_d = _storage.sim_dir(sim_id)
+    account_type = AccountType(args.account_type)
+
+    analyst_report = _load_latest_analyst_report(sim_d)
     if analyst_report is None:
         sys.exit(1)
 
@@ -81,12 +87,14 @@ def main() -> None:
     if snapshot is None:
         sys.exit(1)
 
-    portfolio = _load_portfolio()
+    portfolio = _load_portfolio(sim_d, args.sector, account_type)
     daily_report, updated_portfolio, trade_log = run_ceo_cycle(
-        analyst_report, portfolio, snapshot, use_claude=not args.no_claude
+        analyst_report, portfolio, snapshot,
+        use_claude=not args.no_claude,
+        sim_d=sim_d,
     )
 
-    print(f"\nCEO Daily Report — {daily_report.report_date}")
+    print(f"\n[{sim_id}] CEO Daily Report — {daily_report.report_date}")
     print(f"  P&L: ${daily_report.portfolio_performance.day_pnl:+.2f} "
           f"({daily_report.portfolio_performance.day_pnl_pct:+.2f}%)")
     print(f"  Trades executed: {len(trade_log)}")

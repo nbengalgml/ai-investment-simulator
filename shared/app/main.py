@@ -5,6 +5,7 @@ from app.routes.agents import router as agents_router
 from app.routes.portfolio import router as portfolio_router
 from app.routes.reports import router as reports_router
 from app.routes.settings import router as settings_router
+from app.routes.simulations import router as simulations_router
 from app.routes.trades import router as trades_router
 
 app = FastAPI(
@@ -27,6 +28,7 @@ app.include_router(agents_router)
 app.include_router(portfolio_router)
 app.include_router(reports_router)
 app.include_router(settings_router)
+app.include_router(simulations_router)
 app.include_router(trades_router)
 
 

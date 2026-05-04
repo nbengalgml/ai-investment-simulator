@@ -6,6 +6,15 @@ from typing import Any
 DATA_DIR = Path(os.getenv("DATA_DIR", "/app/data"))
 
 
+def sim_dir(sim_id: str) -> Path:
+    """Return the isolated data directory for one simulation track."""
+    return DATA_DIR / "simulations" / sim_id
+
+
+def make_sim_id(sector: str, account_type: str) -> str:
+    return f"{sector}-{account_type}"
+
+
 def read_json(path: Path) -> Any:
     with open(path) as f:
         return json.load(f)

@@ -8,9 +8,10 @@ interface Props {
   onSave: (updated: Partial<Settings>) => void
   isSaving?: boolean
   savedAt?: Date | null
+  compact?: boolean
 }
 
-export function SettingsPanel({ settings, onSave, isSaving, savedAt }: Props) {
+export function SettingsPanel({ settings, onSave, isSaving, savedAt, compact }: Props) {
   const [budget, setBudget] = useState(String(settings.budget_total))
   const [accountType, setAccountType] = useState(settings.account_type)
   const [market, setMarket] = useState(settings.target_market)
