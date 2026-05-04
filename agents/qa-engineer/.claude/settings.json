@@ -1,0 +1,35 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ../../scripts/pre_tool_audit.sh \"$CLAUDE_TOOL_NAME\""
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "Read(*)",
+      "Write(data/qa/*.json)",
+      "Write(*.md)",
+      "Bash(python *)",
+      "Bash(pytest *)",
+      "Bash(git status)",
+      "Bash(git log *)"
+    ],
+    "deny": [
+      "Bash(sudo *)",
+      "Bash(* rm -rf *)",
+      "Write(.env*)",
+      "Write(data/portfolio/*)",
+      "Write(data/trades/*)",
+      "Write(data/reports/*)",
+      "Write(data/research/*)"
+    ]
+  }
+}

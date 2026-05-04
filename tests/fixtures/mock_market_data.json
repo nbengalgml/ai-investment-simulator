@@ -1,0 +1,41 @@
+{
+  "NVDA": {
+    "currentPrice": 920.0,
+    "previousClose": 900.0,
+    "longName": "NVIDIA Corporation",
+    "sector": "Technology",
+    "fiftyTwoWeekHigh": 974.0,
+    "fiftyTwoWeekLow": 450.0,
+    "trailingPE": 65.2,
+    "marketCap": 2300000000000,
+    "recommendationKey": "buy",
+    "targetMeanPrice": 1050.0,
+    "numberOfAnalystOpinions": 40
+  },
+  "MSFT": {
+    "currentPrice": 440.0,
+    "previousClose": 435.0,
+    "longName": "Microsoft Corporation",
+    "sector": "Technology",
+    "fiftyTwoWeekHigh": 480.0,
+    "fiftyTwoWeekLow": 310.0,
+    "trailingPE": 35.1,
+    "marketCap": 3280000000000,
+    "recommendationKey": "buy",
+    "targetMeanPrice": 500.0,
+    "numberOfAnalystOpinions": 52
+  },
+  "AMZN": {
+    "currentPrice": 195.0,
+    "previousClose": 190.0,
+    "longName": "Amazon.com, Inc.",
+    "sector": "Consumer Cyclical",
+    "fiftyTwoWeekHigh": 215.0,
+    "fiftyTwoWeekLow": 118.0,
+    "trailingPE": 42.0,
+    "marketCap": 2050000000000,
+    "recommendationKey": "strong_buy",
+    "targetMeanPrice": 230.0,
+    "numberOfAnalystOpinions": 55
+  }
+}

@@ -1,0 +1,11 @@
+services:
+  test:
+    build: ./shared
+    working_dir: /app
+    volumes:
+      - ./tests:/app/tests
+      - ./conftest.py:/app/conftest.py
+      - ./pytest.ini:/app/pytest.ini
+      - ./agents:/app/agents
+    env_file: .env
+    command: python -m pytest tests/ -v

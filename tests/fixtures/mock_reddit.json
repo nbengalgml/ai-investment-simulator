@@ -1,0 +1,66 @@
+{
+  "NVDA": {
+    "mentions": 45,
+    "posts": [
+      {"title": "NVDA breaking out again, AI chip demand is insane", "score": 892, "upvote_ratio": 0.95},
+      {"title": "Holding NVDA through earnings, thesis intact", "score": 445, "upvote_ratio": 0.88},
+      {"title": "NVDA DD: Why $1200 is realistic this year", "score": 312, "upvote_ratio": 0.82}
+    ]
+  },
+  "MSFT": {
+    "mentions": 32,
+    "posts": [
+      {"title": "Microsoft Copilot ROI is actually showing up in enterprise surveys", "score": 567, "upvote_ratio": 0.91},
+      {"title": "MSFT is the safest AI play right now", "score": 289, "upvote_ratio": 0.87}
+    ]
+  },
+  "GOOGL": {
+    "mentions": 28,
+    "posts": [
+      {"title": "Google Gemini Ultra beating GPT-4 on coding benchmarks", "score": 734, "upvote_ratio": 0.89},
+      {"title": "GOOGL undervalued relative to AI peers", "score": 201, "upvote_ratio": 0.84}
+    ]
+  },
+  "META": {
+    "mentions": 21,
+    "posts": [
+      {"title": "Llama 4 release could be a huge catalyst for META", "score": 445, "upvote_ratio": 0.86}
+    ]
+  },
+  "AMZN": {
+    "mentions": 18,
+    "posts": [
+      {"title": "AWS Bedrock adoption accelerating, bullish on AMZN", "score": 312, "upvote_ratio": 0.83}
+    ]
+  },
+  "AMD": {
+    "mentions": 15,
+    "posts": [
+      {"title": "AMD MI300X winning deals from hyperscalers", "score": 267, "upvote_ratio": 0.81}
+    ]
+  },
+  "ORCL": {
+    "mentions": 8,
+    "posts": [
+      {"title": "Oracle AI cloud infra spend ramping up fast", "score": 145, "upvote_ratio": 0.78}
+    ]
+  },
+  "CRM": {
+    "mentions": 6,
+    "posts": [
+      {"title": "Salesforce Einstein AI driving upsells", "score": 98, "upvote_ratio": 0.76}
+    ]
+  },
+  "PLTR": {
+    "mentions": 22,
+    "posts": [
+      {"title": "Palantir AIP gaining real enterprise traction", "score": 567, "upvote_ratio": 0.88}
+    ]
+  },
+  "SOUN": {
+    "mentions": 12,
+    "posts": [
+      {"title": "SoundHound AI small cap with big potential", "score": 234, "upvote_ratio": 0.72}
+    ]
+  }
+}

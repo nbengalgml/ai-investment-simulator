@@ -1,0 +1,44 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ../../scripts/pre_tool_audit.sh \"$CLAUDE_TOOL_NAME\""
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo \"[market-researcher] wrote: $(echo $CLAUDE_TOOL_INPUT | python3 -c 'import sys,json; d=json.load(sys.stdin); print(d.get(\"file_path\",\"\"))' 2>/dev/null)\" >> ${DATA_DIR:-../../data}/logs/agent_writes.log"
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "Read(*)",
+      "Write(data/research/market_snapshots/*.json)",
+      "Write(*.md)",
+      "Bash(python *)",
+      "Bash(git status)",
+      "Bash(git log *)"
+    ],
+    "deny": [
+      "Bash(sudo *)",
+      "Bash(* rm -rf *)",
+      "Write(.env*)",
+      "Write(data/portfolio/*)",
+      "Write(data/trades/*)",
+      "Write(data/reports/*)"
+    ]
+  }
+}

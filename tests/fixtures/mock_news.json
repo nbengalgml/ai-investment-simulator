@@ -1,0 +1,46 @@
+{
+  "status": "ok",
+  "totalResults": 5,
+  "articles": [
+    {
+      "source": {"id": "bloomberg", "name": "Bloomberg"},
+      "title": "NVIDIA Reports Record AI Chip Demand in Q1 2026",
+      "description": "NVIDIA sees accelerating demand for H100 and H200 AI accelerators.",
+      "url": "https://bloomberg.com/nvda-q1-2026",
+      "publishedAt": "2026-05-03T09:00:00Z",
+      "content": "NVIDIA reports record revenue driven by AI chip demand."
+    },
+    {
+      "source": {"id": "reuters", "name": "Reuters"},
+      "title": "Microsoft Azure AI Revenue Surges 45% Year-Over-Year",
+      "description": "Azure AI services grew faster than expected in Q2.",
+      "url": "https://reuters.com/msft-azure-ai",
+      "publishedAt": "2026-05-03T08:30:00Z",
+      "content": "Microsoft Azure AI revenue growth beat analyst expectations."
+    },
+    {
+      "source": {"id": "techcrunch", "name": "TechCrunch"},
+      "title": "Google DeepMind Partnership Drives Alphabet AI Strategy",
+      "description": "Alphabet accelerates AI integration across all products.",
+      "url": "https://techcrunch.com/googl-ai",
+      "publishedAt": "2026-05-02T15:00:00Z",
+      "content": "Alphabet's AI investments show strong positive results."
+    },
+    {
+      "source": {"id": "wsj", "name": "Wall Street Journal"},
+      "title": "AMD Challenges NVIDIA in Data Center GPU Market",
+      "description": "AMD's MI300X gains traction with cloud providers.",
+      "url": "https://wsj.com/amd-datacenter",
+      "publishedAt": "2026-05-02T12:00:00Z",
+      "content": "AMD continues to grow market share in AI accelerator market."
+    },
+    {
+      "source": {"id": "ft", "name": "Financial Times"},
+      "title": "AI Sector Valuations Remain Supported by Enterprise Demand",
+      "description": "Analysts maintain bullish outlook on AI infrastructure stocks.",
+      "url": "https://ft.com/ai-valuations",
+      "publishedAt": "2026-05-01T10:00:00Z",
+      "content": "Enterprise AI spending remains robust entering Q2 2026."
+    }
+  ]
+}

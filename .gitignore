@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+*.egg-info/
+.eggs/
+venv/
+env/
+.venv/
+
+# Secrets
+.env
+*.env.local
+
+# Node
+node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Data — qa/ and .gitkeep files are tracked; everything else is runtime state
+data/portfolio/*.json
+data/portfolio/history/
+data/trades/*.json
+data/reports/daily/*.json
+data/reports/weekly/*.json
+data/reports/monthly/*.json
+data/research/market_snapshots/
+data/agent_memory/
+data/logs/
+data/product/*.json
+
+# IDE / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Docker
+.dockerignore

@@ -1,0 +1,40 @@
+{
+  "account_type": "brokerage",
+  "target_market": "AI",
+  "budget_total": 10000.00,
+  "cash_available": 3500.00,
+  "last_updated": "2026-05-03T16:15:00Z",
+  "holdings": [
+    {
+      "ticker": "NVDA",
+      "shares": 2.5,
+      "avg_cost_basis": 850.00,
+      "current_price": 920.00,
+      "market_value": 2300.00,
+      "unrealized_pnl": 175.00,
+      "unrealized_pnl_pct": 8.24,
+      "allocation_pct": 23.0,
+      "open_date": "2026-04-15",
+      "analyst_rating": "BUY",
+      "confidence": "HIGH"
+    },
+    {
+      "ticker": "MSFT",
+      "shares": 5.0,
+      "avg_cost_basis": 400.00,
+      "current_price": 440.00,
+      "market_value": 2200.00,
+      "unrealized_pnl": 200.00,
+      "unrealized_pnl_pct": 10.0,
+      "allocation_pct": 22.0,
+      "open_date": "2026-03-20",
+      "analyst_rating": "BUY",
+      "confidence": "MEDIUM"
+    }
+  ],
+  "total_market_value": 6500.00,
+  "total_unrealized_pnl": 500.00,
+  "total_unrealized_pnl_pct": 8.33,
+  "strategy": "growth",
+  "max_positions": 5
+}
