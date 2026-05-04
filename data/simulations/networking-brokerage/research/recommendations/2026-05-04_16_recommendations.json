@@ -1,0 +1,95 @@
+{
+  "report_id": "rpt-20260504-1630",
+  "generated_at": "2026-05-04T16:30:15.894519Z",
+  "based_on_snapshot_id": "snap-20260504-1630",
+  "recommendations": [
+    {
+      "ticker": "RBBN",
+      "action": "HOLD",
+      "confidence": "MEDIUM",
+      "allocation_pct": 19.1,
+      "composite_score": 83.5,
+      "rationale": [
+        "RBBN maintains position within acceptable range.",
+        "No exit signals triggered; monitoring for momentum changes.",
+        "Current allocation remains within target bounds."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T16:30:15.894519Z"
+    },
+    {
+      "ticker": "ANET",
+      "action": "HOLD",
+      "confidence": "MEDIUM",
+      "allocation_pct": 18.3,
+      "composite_score": 80.0,
+      "rationale": [
+        "ANET maintains position within acceptable range.",
+        "No exit signals triggered; monitoring for momentum changes.",
+        "Current allocation remains within target bounds."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T16:30:15.894519Z"
+    },
+    {
+      "ticker": "EXTR",
+      "action": "HOLD",
+      "confidence": "MEDIUM",
+      "allocation_pct": 18.3,
+      "composite_score": 80.0,
+      "rationale": [
+        "EXTR maintains position within acceptable range.",
+        "No exit signals triggered; monitoring for momentum changes.",
+        "Current allocation remains within target bounds."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T16:30:15.894519Z"
+    },
+    {
+      "ticker": "VIAV",
+      "action": "HOLD",
+      "confidence": "MEDIUM",
+      "allocation_pct": 18.3,
+      "composite_score": 80.0,
+      "rationale": [
+        "VIAV maintains position within acceptable range.",
+        "No exit signals triggered; monitoring for momentum changes.",
+        "Current allocation remains within target bounds."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T16:30:15.894519Z"
+    },
+    {
+      "ticker": "CIEN",
+      "action": "HOLD",
+      "confidence": "MEDIUM",
+      "allocation_pct": 15.9,
+      "composite_score": 69.5,
+      "rationale": [
+        "CIEN maintains position within acceptable range.",
+        "No exit signals triggered; monitoring for momentum changes.",
+        "Current allocation remains within target bounds."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T16:30:15.894519Z"
+    }
+  ],
+  "total_invested_pct": 89.9,
+  "cash_reserve_pct": 10.1,
+  "strategy_notes": "Growth | brokerage | sector: networking | BUY=0 SELL=0 HOLD=5"
+}

@@ -1,0 +1,95 @@
+{
+  "report_id": "rpt-20260504-1630",
+  "generated_at": "2026-05-04T16:30:15.769586Z",
+  "based_on_snapshot_id": "snap-20260504-1630",
+  "recommendations": [
+    {
+      "ticker": "SOUN",
+      "action": "HOLD",
+      "confidence": "MEDIUM",
+      "allocation_pct": 19.2,
+      "composite_score": 83.5,
+      "rationale": [
+        "SOUN maintains position within acceptable range.",
+        "No exit signals triggered; monitoring for momentum changes.",
+        "Current allocation remains within target bounds."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T16:30:15.769586Z"
+    },
+    {
+      "ticker": "GOOGL",
+      "action": "HOLD",
+      "confidence": "MEDIUM",
+      "allocation_pct": 18.4,
+      "composite_score": 80.0,
+      "rationale": [
+        "GOOGL maintains position within acceptable range.",
+        "No exit signals triggered; monitoring for momentum changes.",
+        "Current allocation remains within target bounds."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T16:30:15.769586Z"
+    },
+    {
+      "ticker": "AMZN",
+      "action": "HOLD",
+      "confidence": "MEDIUM",
+      "allocation_pct": 18.4,
+      "composite_score": 80.0,
+      "rationale": [
+        "AMZN maintains position within acceptable range.",
+        "No exit signals triggered; monitoring for momentum changes.",
+        "Current allocation remains within target bounds."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T16:30:15.769586Z"
+    },
+    {
+      "ticker": "ORCL",
+      "action": "HOLD",
+      "confidence": "MEDIUM",
+      "allocation_pct": 18.0,
+      "composite_score": 78.2,
+      "rationale": [
+        "ORCL maintains position within acceptable range.",
+        "No exit signals triggered; monitoring for momentum changes.",
+        "Current allocation remains within target bounds."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T16:30:15.769586Z"
+    },
+    {
+      "ticker": "AMD",
+      "action": "HOLD",
+      "confidence": "MEDIUM",
+      "allocation_pct": 16.0,
+      "composite_score": 74.8,
+      "rationale": [
+        "AMD maintains position within acceptable range.",
+        "No exit signals triggered; monitoring for momentum changes.",
+        "Current allocation remains within target bounds."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T16:30:15.769586Z"
+    }
+  ],
+  "total_invested_pct": 90.0,
+  "cash_reserve_pct": 10.0,
+  "strategy_notes": "Growth | brokerage | sector: AI | BUY=0 SELL=0 HOLD=5"
+}

@@ -1,0 +1,95 @@
+{
+  "report_id": "rpt-20260504-1630",
+  "generated_at": "2026-05-04T16:30:15.916521Z",
+  "based_on_snapshot_id": "snap-20260504-1630",
+  "recommendations": [
+    {
+      "ticker": "SLB",
+      "action": "HOLD",
+      "confidence": "MEDIUM",
+      "allocation_pct": 20.4,
+      "composite_score": 70.8,
+      "rationale": [
+        "SLB maintains position within acceptable range.",
+        "No exit signals triggered; monitoring for momentum changes.",
+        "Current allocation remains within target bounds."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T16:30:15.916521Z"
+    },
+    {
+      "ticker": "BKR",
+      "action": "HOLD",
+      "confidence": "MEDIUM",
+      "allocation_pct": 20.4,
+      "composite_score": 70.8,
+      "rationale": [
+        "BKR maintains position within acceptable range.",
+        "No exit signals triggered; monitoring for momentum changes.",
+        "Current allocation remains within target bounds."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T16:30:15.916521Z"
+    },
+    {
+      "ticker": "HAL",
+      "action": "HOLD",
+      "confidence": "MEDIUM",
+      "allocation_pct": 19.2,
+      "composite_score": 66.8,
+      "rationale": [
+        "HAL maintains position within acceptable range.",
+        "No exit signals triggered; monitoring for momentum changes.",
+        "Current allocation remains within target bounds."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T16:30:15.916521Z"
+    },
+    {
+      "ticker": "DVN",
+      "action": "HOLD",
+      "confidence": "MEDIUM",
+      "allocation_pct": 17.5,
+      "composite_score": 60.8,
+      "rationale": [
+        "DVN maintains position within acceptable range.",
+        "No exit signals triggered; monitoring for momentum changes.",
+        "Current allocation remains within target bounds."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T16:30:15.916521Z"
+    },
+    {
+      "ticker": "MPC",
+      "action": "HOLD",
+      "confidence": "MEDIUM",
+      "allocation_pct": 17.5,
+      "composite_score": 60.8,
+      "rationale": [
+        "MPC maintains position within acceptable range.",
+        "No exit signals triggered; monitoring for momentum changes.",
+        "Current allocation remains within target bounds."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T16:30:15.916521Z"
+    }
+  ],
+  "total_invested_pct": 95.0,
+  "cash_reserve_pct": 5.0,
+  "strategy_notes": "Growth | traditional_ira | sector: gas | BUY=0 SELL=0 HOLD=5"
+}

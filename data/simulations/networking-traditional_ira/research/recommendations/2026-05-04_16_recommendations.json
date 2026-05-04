@@ -1,0 +1,95 @@
+{
+  "report_id": "rpt-20260504-1630",
+  "generated_at": "2026-05-04T16:30:15.821030Z",
+  "based_on_snapshot_id": "snap-20260504-1630",
+  "recommendations": [
+    {
+      "ticker": "RBBN",
+      "action": "HOLD",
+      "confidence": "MEDIUM",
+      "allocation_pct": 20.1,
+      "composite_score": 83.5,
+      "rationale": [
+        "RBBN maintains position within acceptable range.",
+        "No exit signals triggered; monitoring for momentum changes.",
+        "Current allocation remains within target bounds."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T16:30:15.821030Z"
+    },
+    {
+      "ticker": "ANET",
+      "action": "HOLD",
+      "confidence": "MEDIUM",
+      "allocation_pct": 19.3,
+      "composite_score": 80.0,
+      "rationale": [
+        "ANET maintains position within acceptable range.",
+        "No exit signals triggered; monitoring for momentum changes.",
+        "Current allocation remains within target bounds."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T16:30:15.821030Z"
+    },
+    {
+      "ticker": "EXTR",
+      "action": "HOLD",
+      "confidence": "MEDIUM",
+      "allocation_pct": 19.3,
+      "composite_score": 80.0,
+      "rationale": [
+        "EXTR maintains position within acceptable range.",
+        "No exit signals triggered; monitoring for momentum changes.",
+        "Current allocation remains within target bounds."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T16:30:15.821030Z"
+    },
+    {
+      "ticker": "VIAV",
+      "action": "HOLD",
+      "confidence": "MEDIUM",
+      "allocation_pct": 19.3,
+      "composite_score": 80.0,
+      "rationale": [
+        "VIAV maintains position within acceptable range.",
+        "No exit signals triggered; monitoring for momentum changes.",
+        "Current allocation remains within target bounds."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T16:30:15.821030Z"
+    },
+    {
+      "ticker": "CSCO",
+      "action": "HOLD",
+      "confidence": "MEDIUM",
+      "allocation_pct": 17.1,
+      "composite_score": 70.8,
+      "rationale": [
+        "CSCO maintains position within acceptable range.",
+        "No exit signals triggered; monitoring for momentum changes.",
+        "Current allocation remains within target bounds."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T16:30:15.821030Z"
+    }
+  ],
+  "total_invested_pct": 95.1,
+  "cash_reserve_pct": 4.9,
+  "strategy_notes": "Growth | traditional_ira | sector: networking | BUY=0 SELL=0 HOLD=5"
+}

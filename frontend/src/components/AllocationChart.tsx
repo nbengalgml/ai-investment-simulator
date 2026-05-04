@@ -31,14 +31,14 @@ export function AllocationChart({ portfolio }: Props) {
 
   return (
     <div className="flex flex-col gap-3">
-      <ResponsiveContainer width="100%" height={180}>
-        <PieChart>
+      <ResponsiveContainer width="100%" height={160}>
+        <PieChart margin={{ top: 0, right: 16, bottom: 0, left: 16 }}>
           <Pie
             data={slices}
             cx="50%"
             cy="50%"
-            innerRadius={50}
-            outerRadius={80}
+            innerRadius={42}
+            outerRadius={62}
             paddingAngle={2}
             dataKey="value"
           >

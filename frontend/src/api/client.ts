@@ -21,6 +21,12 @@ export const api = {
   settings: () => http.get<Settings>('/settings').then(r => r.data),
   updateSettings: (body: Partial<Settings>) => http.post<Settings>('/settings', body).then(r => r.data),
 
+  // Market data
+  priceHistory: (tickers: string[], range: string) =>
+    http.get<{ range: string; series: Record<string, { t: string; p: number }[]> }>(
+      `/market/price-history?tickers=${tickers.join(',')}&range=${range}`
+    ).then(r => r.data),
+
   // Multi-simulation endpoints
   simulations: () => http.get<SimulationSummary[]>('/simulations').then(r => r.data),
   simPortfolio: (simId: string) =>

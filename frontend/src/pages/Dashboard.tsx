@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { useQueryClient } from '@tanstack/react-query'
 import { useAgentStatus, useTriggerAgent } from '../hooks/useAgentStatus'
 import { useSettings, useUpdateSettings } from '../hooks/useSettings'
@@ -14,6 +15,7 @@ import { HoldingsGrid } from '../components/HoldingsGrid'
 import { AllocationChart } from '../components/AllocationChart'
 import { AgentStatusSidebar } from '../components/AgentStatusSidebar'
 import { PnLChart } from '../components/PnLChart'
+import { PortfolioStockChart } from '../components/PortfolioStockChart'
 import { TradeLog } from '../components/TradeLog'
 import { DailyReportPanel } from '../components/DailyReportPanel'
 import { SettingsPanel } from '../components/SettingsPanel'
@@ -51,6 +53,13 @@ export function Dashboard() {
   const [cycleStep, setCycleStep] = useState<string | null>(null)
   const [cycleError, setCycleError] = useState<string | null>(null)
   const [refreshAllStep, setRefreshAllStep] = useState<string | null>(null)
+  const [syncHistory, setSyncHistory] = useState<Date[]>(() => {
+    try {
+      const saved = localStorage.getItem('sync-history')
+      return saved ? (JSON.parse(saved) as string[]).map(s => new Date(s)) : []
+    } catch { return [] }
+  })
+  const [syncTooltipPos, setSyncTooltipPos] = useState<{ x: number; y: number } | null>(null)
   const pollRef = useRef<ReturnType<typeof setInterval> | null>(null)
   const queryClient = useQueryClient()
 
@@ -69,6 +78,14 @@ export function Dashboard() {
   useEffect(() => () => { if (pollRef.current) clearInterval(pollRef.current) }, [])
 
   const sleep = (ms: number) => new Promise(r => setTimeout(r, ms))
+
+  const recordSync = () => {
+    setSyncHistory(prev => {
+      const next = [new Date(), ...prev].slice(0, 5)
+      localStorage.setItem('sync-history', JSON.stringify(next.map(d => d.toISOString())))
+      return next
+    })
+  }
 
   const runFullCycle = async () => {
     setCycleError(null)
@@ -93,6 +110,7 @@ export function Dashboard() {
         clearInterval(pollRef.current!)
         pollRef.current = null
         setCycleStep(null)
+        recordSync()
         simulations.refetch()
       }
     }, 3_000)
@@ -138,6 +156,7 @@ export function Dashboard() {
     await queryClient.invalidateQueries({ queryKey: ['simulations'] })
     await portfolio.refetch()
     simulations.refetch()
+    recordSync()
     setRefreshAllStep(null)
   }
 
@@ -171,6 +190,37 @@ export function Dashboard() {
           </button>
         ))}
         <div className="ml-auto flex items-center gap-3 pr-2">
+          {/* Last sync indicator */}
+          {syncHistory.length > 0 && !refreshAllStep && (
+            <div
+              className="relative flex items-center gap-1 text-xs text-gray-600 cursor-default select-none"
+              onMouseEnter={e => setSyncTooltipPos({ x: e.clientX, y: e.clientY })}
+              onMouseMove={e => setSyncTooltipPos({ x: e.clientX, y: e.clientY })}
+              onMouseLeave={() => setSyncTooltipPos(null)}
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-green-500 opacity-70 flex-shrink-0" />
+              Synced {syncHistory[0].toLocaleTimeString()}
+              {syncTooltipPos && createPortal(
+                <div
+                  className="fixed z-[9999] w-52 bg-gray-900 border border-gray-700 rounded-lg shadow-xl p-3 pointer-events-none"
+                  style={{ left: syncTooltipPos.x + 12, top: syncTooltipPos.y + 12 }}
+                >
+                  <div className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Last 5 syncs</div>
+                  <ul className="space-y-1.5">
+                    {syncHistory.map((d, i) => (
+                      <li key={i} className="flex items-center gap-2 text-xs">
+                        <span className="text-gray-600 tabular-nums w-3">{i + 1}.</span>
+                        <span className="text-gray-300 tabular-nums">{d.toLocaleTimeString()}</span>
+                        <span className="text-gray-600">{d.toLocaleDateString()}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>,
+                document.body
+              )}
+            </div>
+          )}
+
           {refreshAllStep ? (
             <div className="flex items-center gap-1.5 text-xs text-blue-400">
               <svg className="animate-spin h-3 w-3" viewBox="0 0 24 24" fill="none">
@@ -327,7 +377,10 @@ export function Dashboard() {
               <div className="flex flex-1 min-h-0">
                 <div className="flex-1 min-w-0 overflow-auto p-5">
                   {detailTab === 'portfolio' && (
-                    <HoldingsGrid holdings={portfolio.data!.holdings} />
+                    <>
+                      <HoldingsGrid holdings={portfolio.data!.holdings} />
+                      <PortfolioStockChart holdings={portfolio.data!.holdings} />
+                    </>
                   )}
                   {detailTab === 'pnl' && (
                     <div className="max-w-3xl">

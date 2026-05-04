@@ -60,6 +60,28 @@ composite_score = momentum*0.40 + fundamental*0.35 + sentiment*0.25
 Respond ONLY with a JSON array — no markdown, no explanation."""
 
 
+def _compute_sector_regime(signals: list[StockSignal]) -> str:
+    """
+    Classify sector as bull / bear / sideways based on the distribution of
+    20-day momentum across all stocks.
+
+    bull     — avg momentum > +5%  AND  >55% of stocks positive
+    bear     — avg momentum < -3%  OR   >55% of stocks with negative momentum
+    sideways — everything else
+    """
+    if not signals:
+        return "sideways"
+    momentums = [s.momentum_20d_pct for s in signals]
+    avg = sum(momentums) / len(momentums)
+    pct_positive = sum(1 for m in momentums if m > 0) / len(momentums)
+    pct_negative = 1.0 - pct_positive
+    if avg > 5.0 and pct_positive > 0.55:
+        return "bull"
+    if avg < -3.0 or pct_negative > 0.55:
+        return "bear"
+    return "sideways"
+
+
 def _score_algorithmic(signal: StockSignal) -> StockSignal:
     """Rule-based scoring — used when Claude is unavailable."""
     m = signal.momentum_20d_pct
@@ -87,6 +109,15 @@ def _score_algorithmic(signal: StockSignal) -> StockSignal:
             fs_base = min(100.0, fs_base + 10)
         elif upside < -10:
             fs_base = max(0.0, fs_base - 15)
+
+    # P/E quality adjustment: penalise extremely expensive stocks, reward reasonably valued ones
+    if signal.pe_ratio and signal.pe_ratio > 0:
+        if signal.pe_ratio > 80:
+            fs_base = max(0.0, fs_base - 12)   # very expensive
+        elif signal.pe_ratio > 50:
+            fs_base = max(0.0, fs_base - 6)    # elevated
+        elif signal.pe_ratio < 20:
+            fs_base = min(100.0, fs_base + 6)  # reasonably valued
 
     news_c = signal.news_sentiment_score * 25 + 50
     reddit_c = signal.reddit_sentiment_score * 25 + 50
@@ -234,7 +265,11 @@ def run_research_cycle(sector: str, use_claude: bool = True) -> MarketResearchSn
     else:
         signals = [_score_algorithmic(s) for s in signals]
 
-    # ── 7. Build snapshot ─────────────────────────────────────────────────────
+    # ── 7. Compute sector regime ──────────────────────────────────────────────
+    regime = _compute_sector_regime(signals)
+    logger.info("Sector regime for '%s': %s", sector, regime)
+
+    # ── 8. Build snapshot ─────────────────────────────────────────────────────
     data_sources = ["yfinance"]
     if news_articles:
         data_sources.append("NewsAPI")
@@ -250,6 +285,7 @@ def run_research_cycle(sector: str, use_claude: bool = True) -> MarketResearchSn
         target_market=sector,
         stocks=signals,
         data_sources=data_sources,
+        sector_regime=regime,
     )
 
     # ── 8. Persist ────────────────────────────────────────────────────────────

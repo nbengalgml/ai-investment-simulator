@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { createPortal } from 'react-dom'
 import { getTickerInfo, googleFinanceUrl } from '../data/tickers'
 
 interface Props {
@@ -7,14 +8,15 @@ interface Props {
 }
 
 export function TickerBadge({ ticker, className = '' }: Props) {
-  const [show, setShow] = useState(false)
+  const [pos, setPos] = useState<{ x: number; y: number } | null>(null)
   const info = getTickerInfo(ticker)
 
   return (
     <div
       className="relative inline-block"
-      onMouseEnter={() => setShow(true)}
-      onMouseLeave={() => setShow(false)}
+      onMouseEnter={e => setPos({ x: e.clientX, y: e.clientY })}
+      onMouseMove={e => setPos({ x: e.clientX, y: e.clientY })}
+      onMouseLeave={() => setPos(null)}
     >
       <a
         href={googleFinanceUrl(ticker)}
@@ -26,8 +28,11 @@ export function TickerBadge({ ticker, className = '' }: Props) {
         {ticker}
       </a>
 
-      {show && info && (
-        <div className="absolute z-50 bottom-full left-0 mb-2 w-64 bg-gray-900 border border-gray-700 rounded-lg shadow-xl p-3 text-left pointer-events-none">
+      {pos && info && createPortal(
+        <div
+          className="fixed z-[9999] w-64 bg-gray-900 border border-gray-700 rounded-lg shadow-xl p-3 text-left pointer-events-none"
+          style={{ left: pos.x + 12, top: pos.y + 12 }}
+        >
           <div className="flex items-start justify-between gap-2 mb-1.5">
             <div>
               <div className="text-xs font-bold text-gray-100">{ticker}</div>
@@ -39,7 +44,8 @@ export function TickerBadge({ ticker, className = '' }: Props) {
           <div className="mt-2 pt-2 border-t border-gray-800 text-xs text-blue-500">
             ↗ Click to open on Google Finance
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   )

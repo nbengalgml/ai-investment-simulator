@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.routes.agents import router as agents_router
+from app.routes.market import router as market_router
 from app.routes.portfolio import router as portfolio_router
 from app.routes.reports import router as reports_router
 from app.routes.settings import router as settings_router
@@ -25,6 +26,7 @@ app.add_middleware(
 )
 
 app.include_router(agents_router)
+app.include_router(market_router)
 app.include_router(portfolio_router)
 app.include_router(reports_router)
 app.include_router(settings_router)

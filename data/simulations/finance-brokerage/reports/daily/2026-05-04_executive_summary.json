@@ -1,68 +1,39 @@
 {
   "report_date": "2026-05-04",
-  "generated_at": "2026-05-04T15:54:47.352730Z",
-  "executive_summary": "Simulation cycle completed for 2026-05-04. Portfolio day P&L: $+0.00 (+0.00%). Initiated 4 new position(s): MS, BLK, COF, C. SIMULATION ONLY \u2014 not financial advice.",
-  "market_conditions": "Sector 'finance' avg 20-day momentum: +4.6%. 10 stocks tracked. Data sources: yfinance, SEC EDGAR.",
+  "generated_at": "2026-05-04T16:30:35.962785Z",
+  "executive_summary": "Simulation cycle completed for 2026-05-04. Portfolio day P&L: $-98.44 (-1.09%). SIMULATION ONLY \u2014 not financial advice.",
+  "market_conditions": "Sector 'finance' avg 20-day momentum: +4.4%. 10 stocks tracked. Data sources: yfinance, SEC EDGAR.",
   "portfolio_performance": {
-    "day_pnl": 0.0,
-    "day_pnl_pct": 0.0,
+    "day_pnl": -98.44,
+    "day_pnl_pct": -1.0926,
     "total_unrealized_pnl": 0.0
   },
-  "actions_taken": [
-    {
-      "action": "BUY",
-      "ticker": "MS",
-      "shares": 12.1783,
-      "price": 188.04,
-      "total_value": 2290.0
-    },
-    {
-      "action": "BUY",
-      "ticker": "BLK",
-      "shares": 2.1659,
-      "price": 1057.315,
-      "total_value": 2290.0
-    },
-    {
-      "action": "BUY",
-      "ticker": "COF",
-      "shares": 11.8805,
-      "price": 191.07,
-      "total_value": 2270.0
-    },
-    {
-      "action": "BUY",
-      "ticker": "C",
-      "shares": 17.2911,
-      "price": 124.92,
-      "total_value": 2160.0
-    }
-  ],
+  "actions_taken": [],
   "top_signals": [
     {
       "ticker": "MS",
       "composite_score": 70.8,
-      "momentum_20d_pct": 12.2428
-    },
-    {
-      "ticker": "BLK",
-      "composite_score": 70.8,
-      "momentum_20d_pct": 10.3139
-    },
-    {
-      "ticker": "COF",
-      "composite_score": 70.2,
-      "momentum_20d_pct": 5.4761
+      "momentum_20d_pct": 12.1801
     },
     {
       "ticker": "BAC",
       "composite_score": 69.5,
-      "momentum_20d_pct": 3.7192
+      "momentum_20d_pct": 3.9081
     },
     {
       "ticker": "C",
       "composite_score": 66.8,
-      "momentum_20d_pct": 6.6507
+      "momentum_20d_pct": 6.9709
+    },
+    {
+      "ticker": "BLK",
+      "composite_score": 66.8,
+      "momentum_20d_pct": 9.8095
+    },
+    {
+      "ticker": "COF",
+      "composite_score": 64.2,
+      "momentum_20d_pct": 4.7557
     }
   ],
   "recommendations_pending": [],

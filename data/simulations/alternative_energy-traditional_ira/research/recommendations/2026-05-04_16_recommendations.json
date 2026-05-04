@@ -1,0 +1,95 @@
+{
+  "report_id": "rpt-20260504-1630",
+  "generated_at": "2026-05-04T16:30:15.838448Z",
+  "based_on_snapshot_id": "snap-20260504-1630",
+  "recommendations": [
+    {
+      "ticker": "ARRY",
+      "action": "HOLD",
+      "confidence": "MEDIUM",
+      "allocation_pct": 20.6,
+      "composite_score": 74.2,
+      "rationale": [
+        "ARRY maintains position within acceptable range.",
+        "No exit signals triggered; monitoring for momentum changes.",
+        "Current allocation remains within target bounds."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T16:30:15.838448Z"
+    },
+    {
+      "ticker": "BE",
+      "action": "HOLD",
+      "confidence": "MEDIUM",
+      "allocation_pct": 19.3,
+      "composite_score": 69.5,
+      "rationale": [
+        "BE maintains position within acceptable range.",
+        "No exit signals triggered; monitoring for momentum changes.",
+        "Current allocation remains within target bounds."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T16:30:15.838448Z"
+    },
+    {
+      "ticker": "FSLR",
+      "action": "HOLD",
+      "confidence": "MEDIUM",
+      "allocation_pct": 18.5,
+      "composite_score": 66.8,
+      "rationale": [
+        "FSLR maintains position within acceptable range.",
+        "No exit signals triggered; monitoring for momentum changes.",
+        "Current allocation remains within target bounds."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T16:30:15.838448Z"
+    },
+    {
+      "ticker": "PLUG",
+      "action": "HOLD",
+      "confidence": "MEDIUM",
+      "allocation_pct": 18.3,
+      "composite_score": 66.0,
+      "rationale": [
+        "PLUG maintains position within acceptable range.",
+        "No exit signals triggered; monitoring for momentum changes.",
+        "Current allocation remains within target bounds."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T16:30:15.838448Z"
+    },
+    {
+      "ticker": "CSIQ",
+      "action": "HOLD",
+      "confidence": "MEDIUM",
+      "allocation_pct": 18.3,
+      "composite_score": 66.0,
+      "rationale": [
+        "CSIQ maintains position within acceptable range.",
+        "No exit signals triggered; monitoring for momentum changes.",
+        "Current allocation remains within target bounds."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T16:30:15.838448Z"
+    }
+  ],
+  "total_invested_pct": 95.0,
+  "cash_reserve_pct": 5.0,
+  "strategy_notes": "Growth | traditional_ira | sector: alternative_energy | BUY=0 SELL=0 HOLD=5"
+}

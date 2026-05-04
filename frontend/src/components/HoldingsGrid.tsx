@@ -1,3 +1,5 @@
+import { useState } from 'react'
+import { createPortal } from 'react-dom'
 import type { Holding } from '../api/types'
 import { fmt } from '../utils/format'
 import { TickerBadge } from './TickerBadge'
@@ -9,10 +11,67 @@ const CONFIDENCE_COLORS = {
   LOW: 'text-orange-400 border-orange-700',
 }
 
-const CONFIDENCE_TOOLTIP: Record<string, string> = {
-  HIGH: '3/3 signals: momentum + analyst consensus + sentiment',
-  MEDIUM: '2/3 signals: momentum + analyst consensus',
-  LOW: '1/3 signals: at least one positive indicator',
+const CONFIDENCE_DETAILS: Record<string, { label: string; signals: string[] }> = {
+  HIGH: {
+    label: 'All 3 signals met',
+    signals: [
+      '20-day momentum above sector average',
+      'Analyst consensus = buy or strong_buy',
+      'Positive news sentiment AND Reddit mentions',
+    ],
+  },
+  MEDIUM: {
+    label: '2 of 3 signals met',
+    signals: [
+      '20-day momentum above sector average',
+      'Analyst consensus = buy or strong_buy',
+      'Sentiment signal not required (needs API keys)',
+    ],
+  },
+  LOW: {
+    label: '1 of 3 signals met',
+    signals: [
+      'At least one positive indicator present',
+      'Used by IRA accounts (lower threshold)',
+      'Brokerage requires MEDIUM or higher',
+    ],
+  },
+}
+
+function ConfidenceBadge({ confidence }: { confidence: string }) {
+  const [pos, setPos] = useState<{ x: number; y: number } | null>(null)
+  const colorClass = CONFIDENCE_COLORS[confidence] ?? 'text-gray-400 border-gray-700'
+  const details = CONFIDENCE_DETAILS[confidence]
+
+  return (
+    <div
+      className="relative inline-block"
+      onMouseEnter={e => setPos({ x: e.clientX, y: e.clientY })}
+      onMouseMove={e => setPos({ x: e.clientX, y: e.clientY })}
+      onMouseLeave={() => setPos(null)}
+    >
+      <span className={`mt-1 inline-block text-xs px-1.5 py-0.5 rounded border cursor-default ${colorClass}`}>
+        {confidence}
+      </span>
+      {pos && details && createPortal(
+        <div
+          className="fixed z-[9999] w-60 bg-gray-900 border border-gray-700 rounded-lg shadow-xl p-3 text-left pointer-events-none"
+          style={{ left: pos.x + 12, top: pos.y + 12 }}
+        >
+          <div className="text-xs font-semibold text-gray-200 mb-2">{details.label}</div>
+          <ul className="space-y-1">
+            {details.signals.map((s, i) => (
+              <li key={i} className="text-xs text-gray-400 flex gap-1.5">
+                <span className="text-gray-600 flex-shrink-0">{i + 1}.</span>
+                {s}
+              </li>
+            ))}
+          </ul>
+        </div>,
+        document.body
+      )}
+    </div>
+  )
 }
 
 interface HoldingCardProps {
@@ -21,7 +80,6 @@ interface HoldingCardProps {
 
 function HoldingCard({ holding: h }: HoldingCardProps) {
   const pnlPos = h.unrealized_pnl >= 0
-  const confColor = CONFIDENCE_COLORS[h.confidence] ?? 'text-gray-400 border-gray-700'
   const info = getTickerInfo(h.ticker)
 
   return (
@@ -30,12 +88,7 @@ function HoldingCard({ holding: h }: HoldingCardProps) {
         <div>
           <TickerBadge ticker={h.ticker} className="text-lg" />
           {info && <div className="text-xs text-gray-500 mt-0.5 truncate max-w-[140px]">{info.name}</div>}
-          <span
-            className={`mt-1 inline-block text-xs px-1.5 py-0.5 rounded border ${confColor}`}
-            title={CONFIDENCE_TOOLTIP[h.confidence]}
-          >
-            {h.confidence}
-          </span>
+          <ConfidenceBadge confidence={h.confidence} />
         </div>
         <span className="text-xs text-gray-500 uppercase">{h.analyst_rating}</span>
       </div>

@@ -1,75 +1,39 @@
 {
   "report_date": "2026-05-04",
-  "generated_at": "2026-05-04T15:54:47.216489Z",
-  "executive_summary": "Simulation cycle completed for 2026-05-04. Portfolio day P&L: $+0.00 (+0.00%). Initiated 5 new position(s): SOUN, GOOGL, AMZN, MSFT, ORCL. SIMULATION ONLY \u2014 not financial advice.",
-  "market_conditions": "Sector 'AI' avg 20-day momentum: +20.9%. 10 stocks tracked. Data sources: yfinance, SEC EDGAR.",
+  "generated_at": "2026-05-04T16:30:35.880242Z",
+  "executive_summary": "Simulation cycle completed for 2026-05-04. Portfolio day P&L: $+154.91 (+1.63%). SIMULATION ONLY \u2014 not financial advice.",
+  "market_conditions": "Sector 'AI' avg 20-day momentum: +20.7%. 10 stocks tracked. Data sources: yfinance, SEC EDGAR.",
   "portfolio_performance": {
-    "day_pnl": 0.0,
-    "day_pnl_pct": 0.0,
+    "day_pnl": 154.91,
+    "day_pnl_pct": 1.6324,
     "total_unrealized_pnl": 0.0
   },
-  "actions_taken": [
-    {
-      "action": "BUY",
-      "ticker": "SOUN",
-      "shares": 201.6293,
-      "price": 9.82,
-      "total_value": 1980.0
-    },
-    {
-      "action": "BUY",
-      "ticker": "GOOGL",
-      "shares": 4.9528,
-      "price": 381.6,
-      "total_value": 1890.0
-    },
-    {
-      "action": "BUY",
-      "ticker": "AMZN",
-      "shares": 6.9102,
-      "price": 273.51,
-      "total_value": 1890.0
-    },
-    {
-      "action": "BUY",
-      "ticker": "MSFT",
-      "shares": 4.5141,
-      "price": 416.4699,
-      "total_value": 1880.0
-    },
-    {
-      "action": "BUY",
-      "ticker": "ORCL",
-      "shares": 10.2063,
-      "price": 181.26,
-      "total_value": 1850.0
-    }
-  ],
+  "actions_taken": [],
   "top_signals": [
     {
       "ticker": "SOUN",
       "composite_score": 83.5,
-      "momentum_20d_pct": 46.5672
+      "momentum_20d_pct": 46.0448
     },
     {
       "ticker": "GOOGL",
       "composite_score": 80.0,
-      "momentum_20d_pct": 24.9263
+      "momentum_20d_pct": 25.1915
     },
     {
       "ticker": "AMZN",
       "composite_score": 80.0,
-      "momentum_20d_pct": 27.9459
+      "momentum_20d_pct": 26.3375
+    },
+    {
+      "ticker": "NVDA",
+      "composite_score": 79.5,
+      "momentum_20d_pct": 10.1499
     },
     {
       "ticker": "MSFT",
       "composite_score": 79.5,
-      "momentum_20d_pct": 11.8671
-    },
-    {
-      "ticker": "ORCL",
-      "composite_score": 78.2,
-      "momentum_20d_pct": 27.0469
+      "momentum_20d_pct": 11.6657
     }
   ],
   "recommendations_pending": [],

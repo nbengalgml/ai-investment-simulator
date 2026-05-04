@@ -7,6 +7,7 @@ import json
 import logging
 import os
 import sys
+from copy import copy
 from dataclasses import dataclass
 from datetime import datetime, date, timedelta, timezone
 from pathlib import Path
@@ -79,6 +80,39 @@ def get_strategy(account_type: str) -> StrategyConfig:
     if str(account_type) == "traditional_ira":
         return IRA_STRATEGY
     return BROKERAGE_STRATEGY
+
+
+def _apply_regime(cfg: StrategyConfig, regime: str) -> StrategyConfig:
+    """
+    Tighten or relax strategy parameters based on the detected sector regime.
+
+    bear  → raise confidence bar, shrink max position, hold more cash
+    bull  → slight relaxation (allow bigger positions, deploy more capital)
+    sideways → base config unchanged
+    """
+    if regime == "bear":
+        adjusted = copy(cfg)
+        # Require stronger conviction in a down market
+        if adjusted.min_buy_confidence == "LOW":
+            adjusted.min_buy_confidence = "MEDIUM"
+        elif adjusted.min_buy_confidence == "MEDIUM":
+            adjusted.min_buy_confidence = "HIGH"
+        # Smaller individual bets
+        adjusted.max_single_pct = round(cfg.max_single_pct * 0.80, 1)
+        # Keep more dry powder
+        adjusted.min_cash_pct = min(cfg.min_cash_pct * 1.5, 25.0)
+        # Tighter stop-loss in bear markets to preserve capital
+        adjusted.stop_loss_pct = -15.0
+        adjusted.review_zone_pct = -10.0
+        return adjusted
+    if regime == "bull":
+        adjusted = copy(cfg)
+        # Slightly larger positions when trend is confirmed
+        adjusted.max_single_pct = min(cfg.max_single_pct * 1.10, 40.0)
+        # Deploy a bit more capital — less need for large cash buffer
+        adjusted.min_cash_pct = max(cfg.min_cash_pct * 0.80, 5.0)
+        return adjusted
+    return cfg  # sideways: unchanged
 
 
 # ── Helpers ────────────────────────────────────────────────────────────────────
@@ -218,24 +252,50 @@ def _wash_sale_tickers(sim_dir: Optional[Path]) -> set[str]:
         return set()
 
 
-def check_exit_signals(holdings: list[Holding], cfg: Optional[StrategyConfig] = None) -> list[dict]:
+_LTCG_PROTECTION_DAYS = 300  # don't sell brokerage positions within 65 days of 1-year LTCG threshold
+
+
+def check_exit_signals(
+    holdings: list[Holding],
+    cfg: Optional[StrategyConfig] = None,
+    account_type: str = "brokerage",
+) -> list[dict]:
     """
     Evaluate current holdings against exit rules.
     Returns list of raw exit dicts with keys: ticker, action, trigger, [loss_pct|allocation_pct].
+
+    LTCG protection (brokerage only): skip rebalance sells when a position is within
+    65 days of the 1-year long-term capital gains threshold — hold until LTCG qualifies
+    unless the stop-loss is triggered.
     """
     if cfg is None:
         cfg = BROKERAGE_STRATEGY
+    today = date.today()
     exits = []
     for h in holdings:
         if h.avg_cost_basis == 0:
             continue
         loss_pct = (h.current_price - h.avg_cost_basis) / h.avg_cost_basis * 100
+        days_held = (today - h.open_date).days
+
         if loss_pct <= cfg.stop_loss_pct:
-            exits.append({"ticker": h.ticker, "action": "SELL", "trigger": "stop_loss", "loss_pct": round(loss_pct, 2)})
+            # Stop-loss always fires — capital preservation overrides tax optimisation
+            exits.append({"ticker": h.ticker, "action": "SELL", "trigger": "stop_loss",
+                          "loss_pct": round(loss_pct, 2)})
+
         elif h.allocation_pct > cfg.rebalance_trigger_pct:
-            exits.append({"ticker": h.ticker, "action": "SELL", "trigger": "rebalance", "allocation_pct": h.allocation_pct})
+            # LTCG protection: if brokerage and approaching 1-year mark, hold for LTCG
+            if account_type == "brokerage" and _LTCG_PROTECTION_DAYS <= days_held < 365:
+                exits.append({"ticker": h.ticker, "action": "HOLD",
+                               "trigger": "ltcg_protection",
+                               "days_to_ltcg": 365 - days_held})
+            else:
+                exits.append({"ticker": h.ticker, "action": "SELL", "trigger": "rebalance",
+                               "allocation_pct": h.allocation_pct})
+
         elif loss_pct <= cfg.review_zone_pct:
-            exits.append({"ticker": h.ticker, "action": "HOLD", "trigger": "review_zone", "loss_pct": round(loss_pct, 2)})
+            exits.append({"ticker": h.ticker, "action": "HOLD", "trigger": "review_zone",
+                          "loss_pct": round(loss_pct, 2)})
     return exits
 
 
@@ -253,6 +313,9 @@ def rank_candidates(
     return sorted(eligible, key=lambda s: s.composite_score or 0, reverse=True)
 
 
+MAX_NEW_POSITIONS_PER_CYCLE = 2  # prevent excessive churn in a single run
+
+
 def compute_allocations(
     candidates: list[StockSignal],
     portfolio: PortfolioState,
@@ -262,11 +325,12 @@ def compute_allocations(
     """
     Allocate capital to top N new positions.
     freed_slots: slots opened by pending SELL recommendations.
+    Capped at MAX_NEW_POSITIONS_PER_CYCLE to avoid excessive turnover.
     """
     if cfg is None:
         cfg = BROKERAGE_STRATEGY
     used_slots = len(portfolio.holdings) - freed_slots
-    open_slots = cfg.max_positions - used_slots
+    open_slots = min(cfg.max_positions - used_slots, MAX_NEW_POSITIONS_PER_CYCLE)
     if open_slots <= 0 or not candidates:
         return []
 
@@ -301,12 +365,22 @@ def run_analysis(
     sim_dir: Optional[Path] = None,
 ) -> AnalystReport:
     cfg = get_strategy(portfolio.account_type.value)
+
+    # Adjust strategy based on detected sector regime (bull/bear/sideways)
+    regime = getattr(snapshot, "sector_regime", "sideways")
+    cfg = _apply_regime(cfg, regime)
+    logger.info(
+        "Strategy for %s/%s in '%s' regime: confidence=%s max_pos=%.0f%% min_cash=%.0f%%",
+        portfolio.account_type.value, portfolio.target_market, regime,
+        cfg.min_buy_confidence, cfg.max_single_pct, cfg.min_cash_pct,
+    )
+
     avg_momentum = _sector_avg_momentum(snapshot.stocks)
     signal_map = {s.ticker: s for s in snapshot.stocks}
     held_tickers = {h.ticker for h in portfolio.holdings}
 
     # ── 1. Exit checks on current holdings ───────────────────────────────────
-    exit_signals = check_exit_signals(portfolio.holdings, cfg)
+    exit_signals = check_exit_signals(portfolio.holdings, cfg, account_type=portfolio.account_type.value)
     exit_map = {e["ticker"]: e for e in exit_signals}
     freed = sum(1 for e in exit_signals if e["action"] == "SELL")
 
@@ -447,7 +521,7 @@ def run_analysis(
         cash_reserve_pct=cash_reserve,
         strategy_notes=(
             f"Growth | {portfolio.account_type.value} | sector: {portfolio.target_market} | "
-            f"BUY={n_buy} SELL={n_sell} HOLD={n_hold}"
+            f"regime: {regime} | BUY={n_buy} SELL={n_sell} HOLD={n_hold}"
         ),
     )
 

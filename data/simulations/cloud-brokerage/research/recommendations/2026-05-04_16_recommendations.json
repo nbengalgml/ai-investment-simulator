@@ -1,0 +1,78 @@
+{
+  "report_id": "rpt-20260504-1630",
+  "generated_at": "2026-05-04T16:30:15.813452Z",
+  "based_on_snapshot_id": "snap-20260504-1630",
+  "recommendations": [
+    {
+      "ticker": "DDOG",
+      "action": "HOLD",
+      "confidence": "MEDIUM",
+      "allocation_pct": 23.3,
+      "composite_score": 83.5,
+      "rationale": [
+        "DDOG maintains position within acceptable range.",
+        "No exit signals triggered; monitoring for momentum changes.",
+        "Current allocation remains within target bounds."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T16:30:15.813452Z"
+    },
+    {
+      "ticker": "AMZN",
+      "action": "HOLD",
+      "confidence": "MEDIUM",
+      "allocation_pct": 22.3,
+      "composite_score": 80.0,
+      "rationale": [
+        "AMZN maintains position within acceptable range.",
+        "No exit signals triggered; monitoring for momentum changes.",
+        "Current allocation remains within target bounds."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T16:30:15.813452Z"
+    },
+    {
+      "ticker": "GOOGL",
+      "action": "HOLD",
+      "confidence": "MEDIUM",
+      "allocation_pct": 22.3,
+      "composite_score": 80.0,
+      "rationale": [
+        "GOOGL maintains position within acceptable range.",
+        "No exit signals triggered; monitoring for momentum changes.",
+        "Current allocation remains within target bounds."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T16:30:15.813452Z"
+    },
+    {
+      "ticker": "MSFT",
+      "action": "HOLD",
+      "confidence": "MEDIUM",
+      "allocation_pct": 22.2,
+      "composite_score": 79.5,
+      "rationale": [
+        "MSFT maintains position within acceptable range.",
+        "No exit signals triggered; monitoring for momentum changes.",
+        "Current allocation remains within target bounds."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T16:30:15.813452Z"
+    }
+  ],
+  "total_invested_pct": 90.1,
+  "cash_reserve_pct": 9.9,
+  "strategy_notes": "Growth | brokerage | sector: cloud | BUY=0 SELL=0 HOLD=4"
+}

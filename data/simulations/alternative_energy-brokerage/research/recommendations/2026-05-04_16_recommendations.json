@@ -1,0 +1,27 @@
+{
+  "report_id": "rpt-20260504-1630",
+  "generated_at": "2026-05-04T16:30:15.793758Z",
+  "based_on_snapshot_id": "snap-20260504-1630",
+  "recommendations": [
+    {
+      "ticker": "BE",
+      "action": "HOLD",
+      "confidence": "MEDIUM",
+      "allocation_pct": 35.0,
+      "composite_score": 69.5,
+      "rationale": [
+        "BE maintains position within acceptable range.",
+        "No exit signals triggered; monitoring for momentum changes.",
+        "Current allocation remains within target bounds."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T16:30:15.793758Z"
+    }
+  ],
+  "total_invested_pct": 35.0,
+  "cash_reserve_pct": 65.0,
+  "strategy_notes": "Growth | brokerage | sector: alternative_energy | BUY=0 SELL=0 HOLD=1"
+}

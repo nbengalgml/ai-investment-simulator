@@ -133,6 +133,7 @@ def apply_trades(
     trade_log: list[TradeLogEntry] = []
     now = datetime.now(timezone.utc)
     budget = portfolio.budget_total
+    cash = portfolio.cash_available  # track actual cash through trades
 
     # Process SELLs first so cash becomes available for BUYs
     for rec in sorted(approved, key=lambda r: (0 if r.action == "SELL" else 1)):
@@ -146,18 +147,22 @@ def apply_trades(
             if current_price <= 0:
                 logger.warning("Skipping BUY %s — no price available", ticker)
                 continue
-            dollar_amount = budget * rec.allocation_pct / 100.0
+            dollar_amount = min(budget * rec.allocation_pct / 100.0, cash)
+            if dollar_amount <= 0:
+                logger.warning("Skipping BUY %s — insufficient cash", ticker)
+                continue
             shares = round(dollar_amount / current_price, 4)
+            cash -= dollar_amount
             tax = _tax_impact(None, "BUY", 0.0, portfolio.account_type, today)
             holdings_by_ticker[ticker] = Holding(
                 ticker=ticker,
                 shares=shares,
                 avg_cost_basis=current_price,
                 current_price=current_price,
-                market_value=dollar_amount,
+                market_value=round(dollar_amount, 2),
                 unrealized_pnl=0.0,
                 unrealized_pnl_pct=0.0,
-                allocation_pct=rec.allocation_pct,
+                allocation_pct=round(dollar_amount / budget * 100.0, 2),
                 open_date=today,
                 analyst_rating=rec.action,
                 confidence=Confidence(rec.confidence),
@@ -181,6 +186,8 @@ def apply_trades(
             h = holdings_by_ticker.pop(ticker, None)
             if h is None:
                 continue
+            proceeds = current_price * h.shares
+            cash += proceeds
             gain_loss = (current_price - h.avg_cost_basis) * h.shares
             tax = _tax_impact(h, "SELL", gain_loss, portfolio.account_type, today)
             trade_log.append(TradeLogEntry(
@@ -190,7 +197,7 @@ def apply_trades(
                 ticker=ticker,
                 shares=h.shares,
                 price=current_price,
-                total_value=round(current_price * h.shares, 2),
+                total_value=round(proceeds, 2),
                 rationale=rec.rationale[0] if rec.rationale else "",
                 data_sources=rec.data_sources,
                 approved_by="CEO",
@@ -198,24 +205,37 @@ def apply_trades(
                 simulated_tax_impact=tax,
             ))
 
-    # Recompute portfolio totals
+    # Refresh prices for all remaining holdings from latest market data
+    for ticker, holding in list(holdings_by_ticker.items()):
+        sig = signal_map.get(ticker)
+        if sig and sig.current_price > 0:
+            new_price = sig.current_price
+            new_mv = round(new_price * holding.shares, 2)
+            cost = holding.avg_cost_basis
+            new_pnl = round((new_price - cost) * holding.shares, 2)
+            new_pnl_pct = round((new_price - cost) / cost * 100.0 if cost else 0.0, 4)
+            holdings_by_ticker[ticker] = holding.model_copy(update={
+                "current_price": new_price,
+                "market_value": new_mv,
+                "unrealized_pnl": new_pnl,
+                "unrealized_pnl_pct": new_pnl_pct,
+                "allocation_pct": round(new_mv / budget * 100.0, 2) if budget else holding.allocation_pct,
+            })
+
+    # Recompute totals from actual shares × current_price
     new_holdings = list(holdings_by_ticker.values())
-    total_market_value = sum(h.allocation_pct / 100.0 * budget for h in new_holdings)
-    total_invested_pct = sum(h.allocation_pct for h in new_holdings)
-    cash_available = budget * (1.0 - total_invested_pct / 100.0)
-    total_unrealized_pnl = sum(
-        (h.current_price - h.avg_cost_basis) * h.shares for h in new_holdings
-    )
-    total_unrealized_pnl_pct = (
-        total_unrealized_pnl / total_market_value * 100.0 if total_market_value > 0 else 0.0
+    total_market_value = round(sum(h.market_value for h in new_holdings), 2)
+    total_unrealized_pnl = round(sum(h.unrealized_pnl for h in new_holdings), 2)
+    total_unrealized_pnl_pct = round(
+        total_unrealized_pnl / total_market_value * 100.0 if total_market_value > 0 else 0.0, 2
     )
 
     updated_portfolio = portfolio.model_copy(update={
         "holdings": new_holdings,
-        "total_market_value": round(total_market_value, 2),
-        "cash_available": round(cash_available, 2),
-        "total_unrealized_pnl": round(total_unrealized_pnl, 2),
-        "total_unrealized_pnl_pct": round(total_unrealized_pnl_pct, 2),
+        "total_market_value": total_market_value,
+        "cash_available": round(cash, 2),
+        "total_unrealized_pnl": total_unrealized_pnl,
+        "total_unrealized_pnl_pct": total_unrealized_pnl_pct,
         "last_updated": datetime.now(timezone.utc),
     })
     return updated_portfolio, trade_log

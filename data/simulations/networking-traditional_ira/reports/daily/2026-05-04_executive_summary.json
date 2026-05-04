@@ -1,75 +1,39 @@
 {
   "report_date": "2026-05-04",
-  "generated_at": "2026-05-04T15:54:47.297056Z",
-  "executive_summary": "Simulation cycle completed for 2026-05-04. Portfolio day P&L: $+0.00 (+0.00%). Initiated 5 new position(s): RBBN, ANET, EXTR, VIAV, CSCO. SIMULATION ONLY \u2014 not financial advice.",
-  "market_conditions": "Sector 'networking' avg 20-day momentum: +17.5%. 10 stocks tracked. Data sources: yfinance, SEC EDGAR.",
+  "generated_at": "2026-05-04T16:30:35.961112Z",
+  "executive_summary": "Simulation cycle completed for 2026-05-04. Portfolio day P&L: $-62.46 (-0.66%). SIMULATION ONLY \u2014 not financial advice.",
+  "market_conditions": "Sector 'networking' avg 20-day momentum: +17.4%. 10 stocks tracked. Data sources: yfinance, SEC EDGAR.",
   "portfolio_performance": {
-    "day_pnl": 0.0,
-    "day_pnl_pct": 0.0,
+    "day_pnl": -62.46,
+    "day_pnl_pct": -0.6568,
     "total_unrealized_pnl": 0.0
   },
-  "actions_taken": [
-    {
-      "action": "BUY",
-      "ticker": "RBBN",
-      "shares": 752.809,
-      "price": 2.67,
-      "total_value": 2010.0
-    },
-    {
-      "action": "BUY",
-      "ticker": "ANET",
-      "shares": 11.1323,
-      "price": 173.37,
-      "total_value": 1930.0
-    },
-    {
-      "action": "BUY",
-      "ticker": "EXTR",
-      "shares": 84.9659,
-      "price": 22.715,
-      "total_value": 1930.0
-    },
-    {
-      "action": "BUY",
-      "ticker": "VIAV",
-      "shares": 35.9371,
-      "price": 53.705,
-      "total_value": 1930.0
-    },
-    {
-      "action": "BUY",
-      "ticker": "CSCO",
-      "shares": 18.4705,
-      "price": 92.58,
-      "total_value": 1710.0
-    }
-  ],
+  "actions_taken": [],
   "top_signals": [
     {
       "ticker": "RBBN",
       "composite_score": 83.5,
-      "momentum_20d_pct": 18.6667
+      "momentum_20d_pct": 18.4444
     },
     {
       "ticker": "ANET",
       "composite_score": 80.0,
-      "momentum_20d_pct": 29.7291
+      "momentum_20d_pct": 29.8638
     },
     {
       "ticker": "EXTR",
       "composite_score": 80.0,
-      "momentum_20d_pct": 43.5841
+      "momentum_20d_pct": 43.6473
     },
     {
       "ticker": "VIAV",
       "composite_score": 80.0,
-      "momentum_20d_pct": 39.3487
+      "momentum_20d_pct": 39.3876
     },
     {
       "ticker": "CSCO",
       "composite_score": 70.8,
-      "momentum_20d_pct": 14.7496
+      "momentum_20d_pct": 14.4507
     }
   ],
   "recommendations_pending": [],

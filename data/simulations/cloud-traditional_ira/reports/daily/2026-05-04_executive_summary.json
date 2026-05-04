@@ -1,83 +1,47 @@
 {
   "report_date": "2026-05-04",
-  "generated_at": "2026-05-04T15:54:47.249019Z",
-  "executive_summary": "Simulation cycle completed for 2026-05-04. Portfolio day P&L: $+0.00 (+0.00%). Initiated 5 new position(s): DDOG, AMZN, GOOGL, MSFT, HUBS. SIMULATION ONLY \u2014 not financial advice.",
-  "market_conditions": "Sector 'cloud' avg 20-day momentum: +10.8%. 10 stocks tracked. Data sources: yfinance, SEC EDGAR.",
+  "generated_at": "2026-05-04T16:30:35.873808Z",
+  "executive_summary": "Simulation cycle completed for 2026-05-04. Portfolio day P&L: $+155.44 (+1.63%). SIMULATION ONLY \u2014 not financial advice.",
+  "market_conditions": "Sector 'cloud' avg 20-day momentum: +10.5%. 10 stocks tracked. Data sources: yfinance, SEC EDGAR.",
   "portfolio_performance": {
-    "day_pnl": 0.0,
-    "day_pnl_pct": 0.0,
+    "day_pnl": 155.44,
+    "day_pnl_pct": 1.6345,
     "total_unrealized_pnl": 0.0
   },
-  "actions_taken": [
-    {
-      "action": "BUY",
-      "ticker": "DDOG",
-      "shares": 13.6233,
-      "price": 144.605,
-      "total_value": 1970.0
-    },
-    {
-      "action": "BUY",
-      "ticker": "AMZN",
-      "shares": 6.9114,
-      "price": 273.46,
-      "total_value": 1890.0
-    },
-    {
-      "action": "BUY",
-      "ticker": "GOOGL",
-      "shares": 4.9528,
-      "price": 381.6,
-      "total_value": 1890.0
-    },
-    {
-      "action": "BUY",
-      "ticker": "MSFT",
-      "shares": 4.5141,
-      "price": 416.4699,
-      "total_value": 1880.0
-    },
-    {
-      "action": "BUY",
-      "ticker": "HUBS",
-      "shares": 7.4841,
-      "price": 251.2,
-      "total_value": 1880.0
-    }
-  ],
+  "actions_taken": [],
   "top_signals": [
     {
       "ticker": "DDOG",
       "composite_score": 83.5,
-      "momentum_20d_pct": 24.0819
+      "momentum_20d_pct": 24.2921
     },
     {
       "ticker": "AMZN",
       "composite_score": 80.0,
-      "momentum_20d_pct": 27.9225
+      "momentum_20d_pct": 26.3741
     },
     {
       "ticker": "GOOGL",
       "composite_score": 80.0,
-      "momentum_20d_pct": 24.9263
+      "momentum_20d_pct": 25.1915
     },
     {
       "ticker": "MSFT",
       "composite_score": 79.5,
-      "momentum_20d_pct": 11.8671
+      "momentum_20d_pct": 11.6657
     },
     {
       "ticker": "HUBS",
       "composite_score": 79.5,
-      "momentum_20d_pct": 10.3642
+      "momentum_20d_pct": 10.5444
     }
   ],
   "recommendations_pending": [],
   "next_day_watchlist": [
     "CRM",
-    "ZS",
     "MDB",
     "SNOW",
-    "NET"
+    "NET",
+    "ZS"
   ]
 }

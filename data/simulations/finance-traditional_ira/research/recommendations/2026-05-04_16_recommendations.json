@@ -1,0 +1,95 @@
+{
+  "report_id": "rpt-20260504-1630",
+  "generated_at": "2026-05-04T16:30:15.803041Z",
+  "based_on_snapshot_id": "snap-20260504-1630",
+  "recommendations": [
+    {
+      "ticker": "MS",
+      "action": "HOLD",
+      "confidence": "MEDIUM",
+      "allocation_pct": 19.3,
+      "composite_score": 70.8,
+      "rationale": [
+        "MS maintains position within acceptable range.",
+        "No exit signals triggered; monitoring for momentum changes.",
+        "Current allocation remains within target bounds."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T16:30:15.803041Z"
+    },
+    {
+      "ticker": "BLK",
+      "action": "HOLD",
+      "confidence": "MEDIUM",
+      "allocation_pct": 19.3,
+      "composite_score": 66.8,
+      "rationale": [
+        "BLK maintains position within acceptable range.",
+        "No exit signals triggered; monitoring for momentum changes.",
+        "Current allocation remains within target bounds."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T16:30:15.803041Z"
+    },
+    {
+      "ticker": "COF",
+      "action": "HOLD",
+      "confidence": "MEDIUM",
+      "allocation_pct": 19.2,
+      "composite_score": 64.2,
+      "rationale": [
+        "COF maintains position within acceptable range.",
+        "No exit signals triggered; monitoring for momentum changes.",
+        "Current allocation remains within target bounds."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T16:30:15.803041Z"
+    },
+    {
+      "ticker": "BAC",
+      "action": "HOLD",
+      "confidence": "MEDIUM",
+      "allocation_pct": 19.0,
+      "composite_score": 69.5,
+      "rationale": [
+        "BAC maintains position within acceptable range.",
+        "No exit signals triggered; monitoring for momentum changes.",
+        "Current allocation remains within target bounds."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T16:30:15.803041Z"
+    },
+    {
+      "ticker": "C",
+      "action": "HOLD",
+      "confidence": "MEDIUM",
+      "allocation_pct": 18.2,
+      "composite_score": 66.8,
+      "rationale": [
+        "C maintains position within acceptable range.",
+        "No exit signals triggered; monitoring for momentum changes.",
+        "Current allocation remains within target bounds."
+      ],
+      "data_sources": [
+        "yfinance",
+        "SEC EDGAR"
+      ],
+      "generated_at": "2026-05-04T16:30:15.803041Z"
+    }
+  ],
+  "total_invested_pct": 95.0,
+  "cash_reserve_pct": 5.0,
+  "strategy_notes": "Growth | traditional_ira | sector: finance | BUY=0 SELL=0 HOLD=5"
+}

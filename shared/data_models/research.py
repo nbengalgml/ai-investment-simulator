@@ -49,6 +49,8 @@ class MarketResearchSnapshot(BaseModel):
     target_market: str
     stocks: list[StockSignal]
     data_sources: list[str] = Field(default_factory=list)
+    # "bull" | "bear" | "sideways" — computed from sector-wide momentum
+    sector_regime: str = "sideways"
 
 
 class Recommendation(BaseModel):
