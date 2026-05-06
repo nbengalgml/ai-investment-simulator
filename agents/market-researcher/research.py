@@ -260,7 +260,7 @@ def run_research_cycle(sector: str, use_claude: bool = True) -> MarketResearchSn
         )
 
     # ── 6. Score ──────────────────────────────────────────────────────────────
-    if use_claude and os.getenv("ANTHROPIC_API_KEY"):
+    if use_claude and (os.getenv("ANTHROPIC_API_KEY") or os.getenv("CLAUDE_PROXY_URL")):
         signals = _score_with_claude(signals)
     else:
         signals = [_score_algorithmic(s) for s in signals]

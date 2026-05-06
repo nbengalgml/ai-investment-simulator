@@ -352,7 +352,7 @@ def generate_daily_report(
 ) -> DailyReport:
     today = date.today()
 
-    if use_claude and os.getenv("ANTHROPIC_API_KEY"):
+    if use_claude and (os.getenv("ANTHROPIC_API_KEY") or os.getenv("CLAUDE_PROXY_URL")):
         executive_summary, market_conditions = _claude_narrative(
             approved, rejected, portfolio, day_pnl, day_pnl_pct, snapshot
         )

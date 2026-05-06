@@ -450,7 +450,7 @@ def run_analysis(
 
     # ── 5. Rationale ─────────────────────────────────────────────────────────
     rationale_map: dict[str, list[str]] = {}
-    if use_claude and os.getenv("ANTHROPIC_API_KEY"):
+    if use_claude and (os.getenv("ANTHROPIC_API_KEY") or os.getenv("CLAUDE_PROXY_URL")):
         rationale_map = _claude_rationale(claude_payload, portfolio)
 
     def get_rationale(ticker: str, action: str, trigger: str = "") -> list[str]:
