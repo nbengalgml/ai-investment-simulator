@@ -8,6 +8,7 @@ services:
       - ./data:/app/data
       - ./agents:/app/agents
       - ./shared:/app
+      - ./shared:/app/shared
     env_file: .env
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
